@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class DataStructure_Introduction {
+public class DataStructureIntroduction {
 	
 	@Given("The user enters the correct URL")
 	public void the_user_enters_the_correct_url() {
