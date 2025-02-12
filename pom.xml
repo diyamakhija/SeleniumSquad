@@ -109,7 +109,15 @@
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>7.21.0</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-core</artifactId>
+    <version>7.21.1</version>
+</dependency>
 
+        
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
@@ -117,6 +125,12 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
 		</dependency>
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.13.0</version> <!-- Choose a version that matches your project -->
+</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
