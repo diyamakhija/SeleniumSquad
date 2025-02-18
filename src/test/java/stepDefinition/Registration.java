@@ -1,0 +1,113 @@
+package stepDefinition;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Registration {
+	@Given("the user is on the user registration page")
+	public void the_user_is_on_the_user_registration_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering a Username but leaving other fields empty")
+	public void the_user_clicks_the_register_button_after_entering_a_username_but_leaving_other_fields_empty() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("an error message {string} should appear below the Password textbox")
+	public void an_error_message_should_appear_below_the_password_textbox(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering Password and Password Confirmation fields empty")
+	public void the_user_clicks_the_register_button_after_entering_password_and_password_confirmation_fields_empty() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("an error message {string} should appear below the Password Confirmation textbox")
+	public void an_error_message_should_appear_below_the_password_confirmation_textbox(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering a username with spacebar characters or other than digits and @\\/.\\/+\\/-\\/_")
+	public void the_user_clicks_the_register_button_after_entering_a_username_with_spacebar_characters_or_other_than_digits_and() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("the user should see an error message for invalid data")
+	public void the_user_should_see_an_error_message_for_invalid_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering a password with numeric data")
+	public void the_user_clicks_the_register_button_after_entering_a_password_with_numeric_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("the user should see an error message for entering invalid data")
+	public void the_user_should_see_an_error_message_for_entering_invalid_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering different passwords in Password and Password Confirmation fields")
+	public void the_user_clicks_the_register_button_after_entering_different_passwords_in_password_and_password_confirmation_fields() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("the user should see a password warning message {string}")
+	public void the_user_should_see_a_password_warning_message(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering more than {int} characters in the user ID field")
+	public void the_user_clicks_the_register_button_after_entering_more_than_characters_in_the_user_id_field(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("the user should be redirected to the Home Page of DS Algo with a message {string}")
+	public void the_user_should_be_redirected_to_the_home_page_of_ds_algo_with_a_message(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering a commonly used password")
+	public void the_user_clicks_the_register_button_after_entering_a_commonly_used_password() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering a password with fewer than {int} characters")
+	public void the_user_clicks_the_register_button_after_entering_a_password_with_fewer_than_characters(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering only numeric values as the password")
+	public void the_user_clicks_the_register_button_after_entering_only_numeric_values_as_the_password() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("the user clicks the Register button after entering a valid username, password, and password confirmation")
+	public void the_user_clicks_the_register_button_after_entering_a_valid_username_password_and_password_confirmation() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+
+
+}
