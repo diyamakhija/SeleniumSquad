@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 @tag
+=======
+
+>>>>>>> Stashed changes
 Feature: Title of your feature
   I want to use this template for my feature file
 
@@ -22,6 +26,7 @@ Feature: Title of your feature
       | name  | value | status  |
       | name1 |     5 | success |
       | name2 |     7 | Fail    |
+<<<<<<< Updated upstream
      
   
 
@@ -31,3 +36,5 @@ Feature: Title of your feature
     When The user clicks the Get Started button
     Then The user should be navigated to the Data Structure Introduction page, which displays the Register and Sign in links.
     
+=======
+>>>>>>> Stashed changes
