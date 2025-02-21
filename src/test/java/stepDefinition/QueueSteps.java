@@ -1,75 +1,54 @@
 package stepDefinition;
 
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactory.LoginPagePF;
 import pageFactory.QueuePF;
-import utilities.DriverFactory;
 
 public class QueueSteps {
-	WebDriver driver = DriverFactory.getDriver("chrome");
-	LoginPagePF loginPagePF = new LoginPagePF(driver);
-	QueuePF queuePF = new QueuePF(driver);
 
-	@Given("The user enters the correct {string} in browser") 
-	public void the_user_enters_the_correct(String url) {
-		driver.get("https://dsportalapp.herokuapp.com/");
+	LoginPagePF loginPagePF = new LoginPagePF();
+	QueuePF queuePF = new QueuePF();
+
+	@Given("The user enters the {string}")
+	public void the_user_enters_the(String correctURL) {
+
+		loginPagePF.pageURL();
 	}
 
-	@When("The user clicks the {string} button in correct URL page")
-	public void the_user_clicks_the_button(String getStartedBtn) {
+	@Given("The user clicks the button {string}")
+	public void the_user_clicks_the_button(String string) {
+
 		loginPagePF.getStartedBtn();
 
 	}
 
-	@Then("The user should be navigated to the {string} page which displays the Register and Sign in links")
-	public void the_user_should_be_navigated_to_the_page_which_displays_the_register_and_sign_in_links(
-			String homePage) {
+	@Given("The user should be navigated to the Data-Structure Home  page which displays the Register and Sign in links")
+	public void the_user_should_be_navigated_to_the_data_structure_home_page_which_displays_the_register_and_sign_in_links()
 
-		String expectedurl = "https://dsportalapp.herokuapp.com/home";
-		String actualcurrenturl = driver.getCurrentUrl();
-		System.out.println("The current page : " + actualcurrenturl);
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
+	{
+		loginPagePF.pageAssert();
 	}
 
-	@Given("The user is in the {string} after sign in with {string},{string}")
-	public void the_user_is_in_the_after_sign_in_with(String homePage, String userName, String password) {
-		driver.get("https://dsportalapp.herokuapp.com/");
-		loginPagePF.loginallSteps(userName, password);
-		String expectedurl = "https://dsportalapp.herokuapp.com/home";
-		String actualcurrenturl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("current page:" + actualcurrenturl);
+	@Given("The user is in the {string} after sign in")
+	public void the_user_is_in_the_after_sign_in(String string) {
+		loginPagePF.loginallSteps();
+		loginPagePF.pageAssert();
 
 	}
 
-	@When("The user clicks the {string} button in Queue panel after log in with {string},{string}")
-	public void the_user_clicks_the_button_in_queue_panel_after_log_in_with(String queuePage, String userName,
-			String password) {
+	@When("The user clicks the {string} button in Queue panel")
+	public void the_user_clicks_the_button_in_queue_panel(String string) {
 
 		queuePF.queue_getStartedBtn();
-		String expectedurl = "https://dsportalapp.herokuapp.com/queue/";
-		String actualcurrenturl = driver.getCurrentUrl();
-		String actualPageurl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("The current page is " + actualPageurl);
 
 	}
 
-	@Then("The user be directed to {string} Data Structure Home Page after log in with {string},{string}")
-	public void the_user_be_directed_to_data_structure_home_page_after_log_in_with(String queuePage, String userName,
-			String passWord) {
+	@Then("The user be directed to {string} Data Structure Home Page")
+	public void the_user_be_directed_to_data_structure_home_page(String string) {
 
-		String expectedurl = "https://dsportalapp.herokuapp.com/queue/";
-		String actualcurrenturl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("The current page is " + actualcurrenturl);
+		loginPagePF.pageAssert1();
 
 	}
 

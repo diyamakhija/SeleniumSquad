@@ -1,26 +1,22 @@
 package pageFactory;
 
-import java.time.Duration;
-import java.util.Random;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import webDriverManager.DriverFactory;
 
-import utilities.DriverFactory;
 
-public class QueuePF {
+public class QueuePF extends BaseClass{
 
-	public QueuePF(WebDriver driver) {
 
+	public QueuePF() {
+
+		this.driver = DriverFactory.getDriver("chrome");
 		PageFactory.initElements(driver, this);
 
 	}
 
-	@FindBy(xpath = "/html/body/div[3]/div[5]/div/div/a")
-
+	@FindBy(xpath = "//div[@class='col'][5]/div/div/a")
 	WebElement queue_getStartedBtn;
 
 	@FindBy(xpath = "/html/body/div[2]/ul[1]/a")
@@ -75,6 +71,7 @@ public class QueuePF {
 	WebElement practiceQuestionsBtn;
 
 	public void queue_getStartedBtn() {
+
 		queue_getStartedBtn.click();
 
 	}

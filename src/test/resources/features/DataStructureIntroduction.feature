@@ -1,18 +1,18 @@
 
-@tag
+@DS
 Feature: 
-   @tag1
-Scenario: Verify the user is able to navigate to the DsAlgo Home Page 
-   Given The user enters the correct "URL"
-  	When The user clicks the "Get Started" button
-  	Then The user should be navigated to the "Data Structure Home " page which has the Register and Sign in links
+  
+  Background:
+    Given The user enters the correct "URL"
+  	And The user clicks the "Get Started" button
+  	And The user should be navigated to the Data Structure Home  page which has the Register and Sign in links
 
-    #@tag2
-  #Scenario: Verify that user is able to navigate to Data Structures - Introduction page
-    #Given The user is in the Home page after sign in
-    #When The user should click the Get Started button of the Data Structures - Introduction panel
-    #Then The user should land in Data Structures- Introduction Page 
-    #
+    @tag2
+  Scenario: Verify that user is able to navigate to Data Structures - Introduction page
+    Given The user is in the Home page after sign in
+    When The user should click the Get Started button of the Data Structures - Introduction panel
+    Then The user should land in Data Structures- Introduction Page 
+    
     #@tag3
   #Scenario: Verify that user is able to navigate to Time Complexity page
     #Given The user is in the Data Structures-Introduction page

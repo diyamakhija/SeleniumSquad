@@ -4,53 +4,62 @@ package stepDefinition;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageFactory.DataStructureIntroductionPF;
 import pageFactory.LoginPagePF;
+import pageFactory.QueuePF;
 import utilities.DriverFactory;
 
 public class DataStructutre_InroduictionSteps{
 	
-	WebDriver driver = DriverFactory.getDriver("chrome");
-	LoginPagePF loginPagePF = new LoginPagePF(driver);
+	LoginPagePF loginPagePF = new LoginPagePF();
+	DataStructureIntroductionPF data_Structure_IntroductionPF = new DataStructureIntroductionPF();
 
 	@Given("The user enters the correct {string}")
 	public void the_user_enters_the_correct(String URL)
 	{
-		driver.get("https://dsportalapp.herokuapp.com/");
+		loginPagePF.pageURL();
    
 	}
 
-	@When("The user clicks the {string} button")
+	@And("The user clicks the {string} button")
 	public void the_user_clicks_the_button(String getStartedBtn) 
 	{
 		loginPagePF.getStartedBtn();
 	   
 	}
 
-	@Then("The user should be navigated to the {string} page which has the Register and Sign in links")
-	public void the_user_should_be_navigated_to_the_page_which_displays_the_register_and_sign_in_links(String string) 
+	@And("The user should be navigated to the Data Structure Home  page which has the Register and Sign in links")
+	public void the_user_should_be_navigated_to_the_data_structure_home_page_which_has_the_register_and_sign_in_links() 
 	{
-		String expectedurl = "https://dsportalapp.herokuapp.com/home";
-		String actualcurrenturl = driver.getCurrentUrl();
-		System.out.println("The current page : " + actualcurrenturl);
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
+	   
+		loginPagePF.pageAssert();
 	   
 	}
 
 	@Given("The user is in the Home page after sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
-	   
+		
+		loginPagePF.loginallSteps();
+		loginPagePF.pageAssert();
+;	   
 	}
 
 	@When("The user should click the Get Started button of the Data Structures - Introduction panel")
 	public void the_user_should_click_the_get_started_button_of_the_data_structures_introduction_panel() {
-	   
+		
+		data_Structure_IntroductionPF.dataStrIntro_getStartedBtn();
+		
+		  
 	}
 
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
+		
+		data_Structure_IntroductionPF.pageAssert();
 	   
 	}
 

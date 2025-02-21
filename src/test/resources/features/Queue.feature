@@ -1,25 +1,25 @@
-@tag
+@QS
 Feature: DS Algo Portal
 
   
   Background: Verify the user is able to navigate to the DsAlgo Home Page
-    Given The user enters the correct "URL" in browser
-    When The user clicks the "Get Started" button in correct URL page
-    Then The user should be navigated to the "Data-Structure Home " page which displays the Register and Sign in links
+    Given The user enters the "correct URL"
+    And The user clicks the button "Get Started button "
+    And The user should be navigated to the Data-Structure Home  page which displays the Register and Sign in links
 
-  @tag2
+  @tag1
    Scenario: Verify that user is able to navigate to Queue data structure page
-    Given The user is in the "Home page" after sign in with "SeleniumSquad","Squad2025#"
-    When The user clicks the "Get Started" button in Queue panel after log in with "SeleniumSquad","Squad2025#"
-    Then The user be directed to "Queue" Data Structure Home Page after log in with "SeleniumSquad","Squad2025#"
+    Given The user is in the "Home page" after sign in
+    When The user clicks the "Get Started" button in Queue panel 
+    Then The user be directed to "Queue" Data Structure Home Page 
 
-  #@tag3
+  #@tag2
   #Scenario: Verify that user is able to navigate to Implementation of Queue in Python page
     #Given The user is in the "Queue" page after Sign in with "username","password"
     #When The user clicks "Implementation of Queue in Python" button
     #Then The user should be redirected to "Implementation of Queue in Python" page
 #
-  #@tag4
+  #@tag3
   #Scenario: Verify that user is able to navigate to Try Here  page for Implementation of Queue in Python page
     #Given The user is in the Implementation of Queue in Python page
     #When The user clicks Try Here button in Implementation of Queue in Python page
