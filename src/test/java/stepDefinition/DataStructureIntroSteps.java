@@ -2,69 +2,44 @@
 package stepDefinition;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageFactory.DataStructureIntroductionPF;
-import pageFactory.LoginPagePF;
-import pageFactory.QueuePF;
-import utilities.DriverFactory;
+import pageObjectModel.DataStructureIntroPOM;
+import pageObjectModel.LoginPagePOM;
 
-public class DataStructutre_InroduictionSteps{
+public class DataStructureIntroSteps{
 	
-	LoginPagePF loginPagePF = new LoginPagePF();
-	DataStructureIntroductionPF data_Structure_IntroductionPF = new DataStructureIntroductionPF();
-
-	@Given("The user enters the correct {string}")
-	public void the_user_enters_the_correct(String URL)
-	{
-		loginPagePF.pageURL();
-   
-	}
-
-	@And("The user clicks the {string} button")
-	public void the_user_clicks_the_button(String getStartedBtn) 
-	{
-		loginPagePF.getStartedBtn();
-	   
-	}
-
-	@And("The user should be navigated to the Data Structure Home  page which has the Register and Sign in links")
-	public void the_user_should_be_navigated_to_the_data_structure_home_page_which_has_the_register_and_sign_in_links() 
-	{
-	   
-		loginPagePF.pageAssert();
-	   
-	}
+	LoginPagePOM loginPagePF = new LoginPagePOM();
+	DataStructureIntroPOM dataStructureIntroPOM= new DataStructureIntroPOM();
 
 	@Given("The user is in the Home page after sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
 		
-		loginPagePF.loginallSteps();
-		loginPagePF.pageAssert();
-;	   
+		loginPagePF.userNameField.sendKeys("SeleniumSquad");
+		loginPagePF.passwordField.sendKeys("Squad2025#");
+		loginPagePF.logInBtn.click();
+		
+	   
 	}
 
 	@When("The user should click the Get Started button of the Data Structures - Introduction panel")
 	public void the_user_should_click_the_get_started_button_of_the_data_structures_introduction_panel() {
-		
-		data_Structure_IntroductionPF.dataStrIntro_getStartedBtn();
-		
-		  
+		DataStructureIntroPOM.dataStrIntro_getStartedBtn.click();
 	}
 
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
-		
-		data_Structure_IntroductionPF.pageAssert();
-	   
+		// TODO: Need to come from excel sheet
+		String expectedurl = "https://dsportalapp.herokuapp.com/data-structures-introduction/";
+
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, dataStructureIntroPOM.getCurrentUrl());
+
 	}
 
 	@Given("The user is in the Data Structures-Introduction page")
-	public void the_user_is_in_the_data_structures_introduction_page() {
+	public void the_user_is_in_the_data_structures_introduction_page1() {
 	   
 	}
 
@@ -164,8 +139,8 @@ public class DataStructutre_InroduictionSteps{
 	}
 
 	@Given("The user is in the Data Structures - Introduction page")
-	public void the_user_is_in_the_data_structures_introduction_page1() {
-	   
+	public void the_user_is_in_the_data_structures_introduction_page() {
+	    
 	}
 
 	@When("The user clicks the Numpy Ninja on the top left corner of the page")
@@ -196,5 +171,4 @@ public class DataStructutre_InroduictionSteps{
 
 
 }
-
 

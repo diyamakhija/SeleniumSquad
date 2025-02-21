@@ -1,15 +1,14 @@
-package pageFactory;
+package pageObjectModel;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import webDriverManager.DriverFactory;
 
-public class DataStructureIntroductionPF extends BaseClass {		
+public class DataStructureIntroPOM extends BaseClass {		
 
 
-	public DataStructureIntroductionPF () {
+	public DataStructureIntroPOM () {
 		
 		this.driver = DriverFactory.getDriver("chrome");
 		PageFactory.initElements(driver, this);
@@ -17,6 +16,7 @@ public class DataStructureIntroductionPF extends BaseClass {
 	}
 
 	@FindBy(xpath = "/html/body/div[3]/div[1]/div/div/a")
+	public
 	static WebElement dataStrIntro_getStartedBtn;
 
 	@FindBy(xpath = "/html/body/div[2]/ul/a")
@@ -54,12 +54,6 @@ public class DataStructureIntroductionPF extends BaseClass {
 		practiceQuestionsBtn.click();
 
 	}
-	public void pageAssert() {
-		String expectedurl = "https://dsportalapp.herokuapp.com/data-structures-introduction/";
-		String actualcurrenturl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("current page:" + actualcurrenturl);
-
-	}
+	
 
 }

@@ -9,13 +9,11 @@ public class Hooks {
 
 	@Before
 	public void setUp() {
-		System.out.println("calling hooks setup");
 		DriverFactory.getDriver("chrome");
 	}
 
 	@After
 	public void tearDown() {
-		System.out.println("calling hooks teardown");
 		DriverFactory.quitDriver();
 	}
 }

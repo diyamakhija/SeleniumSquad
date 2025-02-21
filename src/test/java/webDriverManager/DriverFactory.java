@@ -12,7 +12,6 @@ public class DriverFactory {
 	public static WebDriver getDriver(String browser) {
 		WebDriver driver = tlDriver.get();
 		if (driver == null) {
-			System.out.println("came to getDriver");
 
 			switch (browser.toLowerCase()) {
 			case "chrome":
@@ -35,9 +34,7 @@ public class DriverFactory {
 			tlDriver.set(driver);
 		}
 
-		// Common driver configurations (can be customized)
-		driver.manage().window().maximize(); // Maximize the browser window
-		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 
 		return driver;
 	}

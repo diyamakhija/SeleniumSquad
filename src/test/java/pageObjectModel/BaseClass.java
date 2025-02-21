@@ -1,4 +1,4 @@
-package pageFactory;
+package pageObjectModel;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -10,5 +10,9 @@ public class BaseClass extends PageFactory {
 	public BaseClass() {
 		this.driver = DriverFactory.getDriver("chrome");
 		PageFactory.initElements(driver, this);
+	}
+	
+	public String getCurrentUrl () {
+		return driver.getCurrentUrl();
 	}
 }

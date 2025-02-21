@@ -1,59 +1,42 @@
 package stepDefinition;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageFactory.LoginPagePF;
-import pageFactory.QueuePF;
+import pageObjectModel.LoginPagePOM;
+import pageObjectModel.QueuePOM;
 
 public class QueueSteps {
 
-	LoginPagePF loginPagePF = new LoginPagePF();
-	QueuePF queuePF = new QueuePF();
-
-	@Given("The user enters the {string}")
-	public void the_user_enters_the(String correctURL) {
-
-		loginPagePF.pageURL();
-	}
-
-	@Given("The user clicks the button {string}")
-	public void the_user_clicks_the_button(String string) {
-
-		loginPagePF.getStartedBtn();
-
-	}
-
-	@Given("The user should be navigated to the Data-Structure Home  page which displays the Register and Sign in links")
-	public void the_user_should_be_navigated_to_the_data_structure_home_page_which_displays_the_register_and_sign_in_links()
-
-	{
-		loginPagePF.pageAssert();
-	}
+	LoginPagePOM loginPagePF = new LoginPagePOM();
+	QueuePOM queuePOM = new QueuePOM();
 
 	@Given("The user is in the {string} after sign in")
 	public void the_user_is_in_the_after_sign_in(String string) {
-		loginPagePF.loginallSteps();
-		loginPagePF.pageAssert();
-
-	}
+		loginPagePF.userNameField.sendKeys("SeleniumSquad");
+		loginPagePF.passwordField.sendKeys("Squad2025#");
+		loginPagePF.logInBtn.click();
+	}    
 
 	@When("The user clicks the {string} button in Queue panel")
 	public void the_user_clicks_the_button_in_queue_panel(String string) {
-
-		queuePF.queue_getStartedBtn();
-
+		queuePOM.queue_getStartedBtn.click();
 	}
 
 	@Then("The user be directed to {string} Data Structure Home Page")
 	public void the_user_be_directed_to_data_structure_home_page(String string) {
+		// TODO: Need to come from excel sheet
+		String expectedurl = "https://dsportalapp.herokuapp.com/queue/";
 
-		loginPagePF.pageAssert1();
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, queuePOM.getCurrentUrl());
 
 	}
 
 	@Given("The user is in the {string} page after Sign in with {string},{string}")
 	public void the_user_is_in_the_page_after_sign_in_with(String string, String string2, String string3) {
+
 	}
 
 	@When("The user clicks {string} button")

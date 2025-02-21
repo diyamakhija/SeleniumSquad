@@ -1,22 +1,16 @@
-package pageFactory;
+package pageObjectModel;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import webDriverManager.DriverFactory;
 
+public class QueuePOM extends BaseClass{
 
-public class QueuePF extends BaseClass{
-
-
-	public QueuePF() {
-
-		this.driver = DriverFactory.getDriver("chrome");
-		PageFactory.initElements(driver, this);
-
+	public QueuePOM() {
+		super();
 	}
 
 	@FindBy(xpath = "//div[@class='col'][5]/div/div/a")
+	public
 	WebElement queue_getStartedBtn;
 
 	@FindBy(xpath = "/html/body/div[2]/ul[1]/a")
@@ -70,78 +64,5 @@ public class QueuePF extends BaseClass{
 	@FindBy(xpath = "/html/body/div[2]/div/div[1]/div/a")
 	WebElement practiceQuestionsBtn;
 
-	public void queue_getStartedBtn() {
-
-		queue_getStartedBtn.click();
-
-	}
-
-	public void implementationOfQueueInPythonBtn() {
-		implementationOfQueueInPythonBtn.click();
-	}
-
-	public void tryHereBtn() {
-		tryHereBtn.click();
-	}
-
-	public void pythonCodeField() {
-		pythonCodeField.sendKeys("Hello, World!");
-	}
-
-	public void runBtn() {
-		runBtn.click();
-	}
-
-	public void implementationUsingCollectionsDeque() {
-		implementationUsingCollectionsDeque.click();
-	}
-
-	public void tryHereBtn1() {
-		tryHereBtn1.click();
-	}
-
-	public void pythonCodeField1() {
-		pythonCodeField1.sendKeys("Hello, World!");
-	}
-
-	public void runBtn1() {
-		runBtn1.click();
-	}
-
-	public void implementationUsingArray() {
-		implementationUsingArray.click();
-	}
-
-	public void tryHereBtn2() {
-		tryHereBtn2.click();
-	}
-
-	public void pythonCodeField2() {
-		pythonCodeField2.sendKeys("Hello, World!");
-	}
-
-	public void runBtn2() {
-		runBtn2.click();
-	}
-
-	public void queueOperations() {
-		queueOperations.click();
-	}
-
-	public void tryHereBtn3() {
-		tryHereBtn3.click();
-	}
-
-	public void pythonCodeField3() {
-		pythonCodeField3.sendKeys("Hello, World!");
-	}
-
-	public void runBtn3() {
-		runBtn3.click();
-	}
-
-	public void practiceQuestionsBtn() {
-		practiceQuestionsBtn.click();
-	}
 
 }
