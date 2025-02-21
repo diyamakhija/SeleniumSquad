@@ -12,3 +12,4 @@
 
 # Maven target directory
 target/
+allure-results/
