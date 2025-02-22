@@ -6,27 +6,25 @@ import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjectModel.DataStructureIntroPOM;
-import pageObjectModel.LoginPagePOM;
+import pageFactory.DataStructureIntroPF;
+import pageFactory.LoginPagePF;
 
 public class DataStructureIntroSteps{
 	
-	LoginPagePOM loginPagePF = new LoginPagePOM();
-	DataStructureIntroPOM dataStructureIntroPOM= new DataStructureIntroPOM();
+	LoginPagePF loginPagePF = new LoginPagePF();
+	DataStructureIntroPF dataStructureIntroPF= new DataStructureIntroPF();
 
 	@Given("The user is in the Home page after sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
 		
-		loginPagePF.userNameField.sendKeys("SeleniumSquad");
-		loginPagePF.passwordField.sendKeys("Squad2025#");
-		loginPagePF.logInBtn.click();
+		
 		
 	   
 	}
 
 	@When("The user should click the Get Started button of the Data Structures - Introduction panel")
 	public void the_user_should_click_the_get_started_button_of_the_data_structures_introduction_panel() {
-		DataStructureIntroPOM.dataStrIntro_getStartedBtn.click();
+		dataStructureIntroPF.dataStrIntro_getStartedBtn.click();
 	}
 
 	@Then("The user should land in Data Structures- Introduction Page")
@@ -34,7 +32,7 @@ public class DataStructureIntroSteps{
 		// TODO: Need to come from excel sheet
 		String expectedurl = "https://dsportalapp.herokuapp.com/data-structures-introduction/";
 
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, dataStructureIntroPOM.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, dataStructureIntroPF.getCurrentUrl());
 
 	}
 

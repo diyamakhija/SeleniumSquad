@@ -1,15 +1,18 @@
 package stepDefinition;
 
 import io.cucumber.java.en.Given;
-import pageObjectModel.LoginPagePOM;
+import pageFactory.LoginPagePF;
 
 public class CommonSteps {
-	LoginPagePOM loginPagePF = new LoginPagePOM();
+	LoginPagePF loginPagePF = new LoginPagePF();
 
 	@Given("The user sign in to dsAlgo Portal")
 	public void the_user_sign_in_to_ds_algo_portal() {
 		loginPagePF.pageURL();
 		loginPagePF.getStartedBtn.click();
 		loginPagePF.signInBtn.click();
+		loginPagePF.userNameField.sendKeys("SeleniumSquad");
+		loginPagePF.passwordField.sendKeys("Squad2025#");
+		loginPagePF.logInBtn.click();
 	}
 }

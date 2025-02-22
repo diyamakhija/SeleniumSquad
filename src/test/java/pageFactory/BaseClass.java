@@ -1,10 +1,10 @@
-package pageObjectModel;
+package pageFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import webDriverManager.DriverFactory;
 
-public class BaseClass extends PageFactory {
+public class BaseClass {
 	protected WebDriver driver;
 
 	public BaseClass() {

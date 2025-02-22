@@ -1,20 +1,20 @@
-package pageObjectModel;
+package pageFactory;
 
 import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPagePOM extends BaseClass {
+public class LoginPagePF extends BaseClass {
 
-	public LoginPagePOM() {
+	public LoginPagePF() {
 		super();
 	}
 
-	@FindBy(xpath = "/html/body/div[1]/div/div/a/button")
+	@FindBy(xpath = "//div[@class='content']/a/button")
 	public WebElement getStartedBtn;
 
-	@FindBy(xpath = "/html/body/div[1]/nav/div/div[2]/ul/a[3]")
+	@FindBy(xpath = "//div[@class='navbar-nav'][2]/ul/a[3]")
 	public WebElement signInBtn;
 
 	@FindBy(id = "id_username")
@@ -23,7 +23,7 @@ public class LoginPagePOM extends BaseClass {
 	@FindBy(id = "id_password")
 	public WebElement passwordField;
 
-	@FindBy(xpath = "/html/body/div[2]/div/div[2]/form/input[4]")
+	@FindBy(xpath = "//div[@class='col-sm']/form/input[4]")
 	public WebElement logInBtn;
 
 
