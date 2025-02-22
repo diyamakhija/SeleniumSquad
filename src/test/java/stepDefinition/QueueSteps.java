@@ -1,80 +1,42 @@
 package stepDefinition;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageFactory.LoginPagePF;
-import pageFactory.QueuePF;
-import utilities.DriverFactory;
+import pageObjectModel.LoginPagePOM;
+import pageObjectModel.QueuePOM;
 
 public class QueueSteps {
-	WebDriver driver = DriverFactory.getDriver("chrome");
-	LoginPagePF loginPagePF = new LoginPagePF(driver);
-	QueuePF queuePF = new QueuePF(driver);
 
-	@Given("The user enters the correct {string} in browser") 
-	public void the_user_enters_the_correct(String url) {
-		driver.get("https://dsportalapp.herokuapp.com/");
+	LoginPagePOM loginPagePF = new LoginPagePOM();
+	QueuePOM queuePOM = new QueuePOM();
+
+	@Given("The user is in the {string} after sign in")
+	public void the_user_is_in_the_after_sign_in(String string) {
+		loginPagePF.userNameField.sendKeys("SeleniumSquad");
+		loginPagePF.passwordField.sendKeys("Squad2025#");
+		loginPagePF.logInBtn.click();
+	}    
+
+	@When("The user clicks the {string} button in Queue panel")
+	public void the_user_clicks_the_button_in_queue_panel(String string) {
+		queuePOM.queue_getStartedBtn.click();
 	}
 
-	@When("The user clicks the {string} button in correct URL page")
-	public void the_user_clicks_the_button(String getStartedBtn) {
-		loginPagePF.getStartedBtn();
-
-	}
-
-	@Then("The user should be navigated to the {string} page which displays the Register and Sign in links")
-	public void the_user_should_be_navigated_to_the_page_which_displays_the_register_and_sign_in_links(
-			String homePage) {
-
-		String expectedurl = "https://dsportalapp.herokuapp.com/home";
-		String actualcurrenturl = driver.getCurrentUrl();
-		System.out.println("The current page : " + actualcurrenturl);
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-	}
-
-	@Given("The user is in the {string} after sign in with {string},{string}")
-	public void the_user_is_in_the_after_sign_in_with(String homePage, String userName, String password) {
-		driver.get("https://dsportalapp.herokuapp.com/");
-		loginPagePF.loginallSteps(userName, password);
-		String expectedurl = "https://dsportalapp.herokuapp.com/home";
-		String actualcurrenturl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("current page:" + actualcurrenturl);
-
-	}
-
-	@When("The user clicks the {string} button in Queue panel after log in with {string},{string}")
-	public void the_user_clicks_the_button_in_queue_panel_after_log_in_with(String queuePage, String userName,
-			String password) {
-
-		queuePF.queue_getStartedBtn();
+	@Then("The user be directed to {string} Data Structure Home Page")
+	public void the_user_be_directed_to_data_structure_home_page(String string) {
+		// TODO: Need to come from excel sheet
 		String expectedurl = "https://dsportalapp.herokuapp.com/queue/";
-		String actualcurrenturl = driver.getCurrentUrl();
-		String actualPageurl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("The current page is " + actualPageurl);
 
-	}
-
-	@Then("The user be directed to {string} Data Structure Home Page after log in with {string},{string}")
-	public void the_user_be_directed_to_data_structure_home_page_after_log_in_with(String queuePage, String userName,
-			String passWord) {
-
-		String expectedurl = "https://dsportalapp.herokuapp.com/queue/";
-		String actualcurrenturl = driver.getCurrentUrl();
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, actualcurrenturl);
-		System.out.println("The current page is " + actualcurrenturl);
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, queuePOM.getCurrentUrl());
 
 	}
 
 	@Given("The user is in the {string} page after Sign in with {string},{string}")
 	public void the_user_is_in_the_page_after_sign_in_with(String string, String string2, String string3) {
+
 	}
 
 	@When("The user clicks {string} button")
