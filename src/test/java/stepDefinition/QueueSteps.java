@@ -5,24 +5,22 @@ import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjectModel.LoginPagePOM;
-import pageObjectModel.QueuePOM;
+import pageFactory.LoginPagePF;
+import pageFactory.QueuePF;
 
 public class QueueSteps {
 
-	LoginPagePOM loginPagePF = new LoginPagePOM();
-	QueuePOM queuePOM = new QueuePOM();
+	LoginPagePF loginPagePF = new LoginPagePF();
+	QueuePF queuePF = new QueuePF();
 
 	@Given("The user is in the {string} after sign in")
 	public void the_user_is_in_the_after_sign_in(String string) {
-		loginPagePF.userNameField.sendKeys("SeleniumSquad");
-		loginPagePF.passwordField.sendKeys("Squad2025#");
-		loginPagePF.logInBtn.click();
+		
 	}    
 
 	@When("The user clicks the {string} button in Queue panel")
 	public void the_user_clicks_the_button_in_queue_panel(String string) {
-		queuePOM.queue_getStartedBtn.click();
+		queuePF.queue_getStartedBtn.click();
 	}
 
 	@Then("The user be directed to {string} Data Structure Home Page")
@@ -30,7 +28,7 @@ public class QueueSteps {
 		// TODO: Need to come from excel sheet
 		String expectedurl = "https://dsportalapp.herokuapp.com/queue/";
 
-		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, queuePOM.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, queuePF.getCurrentUrl());
 
 	}
 
