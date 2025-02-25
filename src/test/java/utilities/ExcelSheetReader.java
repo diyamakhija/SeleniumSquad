@@ -10,38 +10,38 @@ import java.util.*;
 
 public class ExcelSheetReader {
 
-	private static Map<String, List<List<String>>> excelData;
+	private static Map<String, List<List<String>>> excelData = new HashMap<>();;
 
 	public static Map<String, List<List<String>>> getData(String filePath) {
 
-		if (excelData != null) {
-			return excelData;
-		}
+		if (excelData.isEmpty()) {
+			 File file = new File(filePath);
 
-		excelData = new HashMap<>();
+			try (FileInputStream fis = new FileInputStream(file);
+					Workbook workbook = new XSSFWorkbook(fis)) {
 
-		try (FileInputStream fis = new FileInputStream(new File(filePath)); Workbook workbook = new XSSFWorkbook(fis)) {
+				// Iterate through all sheets
+				for (Sheet sheet : workbook) {
+					List<List<String>> rows = new ArrayList<>();
 
-			// Iterate through all sheets
-			for (Sheet sheet : workbook) {
-				List<List<String>> rows = new ArrayList<>();
+					// Iterate through all rows
+					for (Row row : sheet) {
+						List<String> rowData = new ArrayList<>();
 
-				// Iterate through all rows
-				for (Row row : sheet) {
-					List<String> rowData = new ArrayList<>();
+						// Iterate through all cells in a row
+						for (Cell cell : row) {
+							rowData.add(getCellValue(cell));
+						}
 
-					// Iterate through all cells in a row
-					for (Cell cell : row) {
-						rowData.add(getCellValue(cell));
+						rows.add(rowData);
 					}
 
-					rows.add(rowData);
+					excelData.put(sheet.getSheetName(), rows);
+					fis.close();
 				}
-
-				excelData.put(sheet.getSheetName(), rows);
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 		return excelData;
@@ -70,15 +70,14 @@ public class ExcelSheetReader {
 
 	public static List<String> userCredential(int row) {
 
-		List<String> userCredential = getExcelSheets().get("Sheet1").get(row).subList(0, 3);
-		return userCredential;
+		return getExcelSheets().get("Sheet1").get(row).subList(0, 3);
 
 	}
 
-	public static List<String> pythonCodeData() {
+	public static List<String> pythonCodeData(int row) {
 
-		List<String> pythonCode = getExcelSheets().get("pythonCode").get(1).subList(0, 2);
-		return pythonCode;
+		return getExcelSheets().get("pythonCode").get(row).subList(0, 2);
+		 
 
 	}
 

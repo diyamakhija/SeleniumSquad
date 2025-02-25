@@ -8,17 +8,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactory.DataStructureIntroPF;
 import pageFactory.LoginPagePF;
+import utilities.ExcelSheetReader;
 
 public class DataStructureIntroSteps{
 	
 	LoginPagePF loginPagePF = new LoginPagePF();
 	DataStructureIntroPF dataStructureIntroPF= new DataStructureIntroPF();
+	ExcelSheetReader excelSheetReader = new ExcelSheetReader();
 
 	@Given("The user is in the Home page after sign in")
-	public void the_user_is_in_the_home_page_after_sign_in() {
-		
-		
-		
+	public void the_user_is_in_the_home_page_after_sign_in() {	
 	   
 	}
 
@@ -29,7 +28,8 @@ public class DataStructureIntroSteps{
 
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
-		// TODO: Need to come from excel sheet
+		
+
 		String expectedurl = "https://dsportalapp.herokuapp.com/data-structures-introduction/";
 
 		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, dataStructureIntroPF.getCurrentUrl());
@@ -43,26 +43,38 @@ public class DataStructureIntroSteps{
 
 	@When("The user clicks Time Complexity button")
 	public void the_user_clicks_time_complexity_button() {
+		dataStructureIntroPF.timeComplexityBtn.click();
 	   
 	}
 
 	@Then("The user should be redirected to Time Complexity of Data structures-Introduction")
 	public void the_user_should_be_redirected_to_time_complexity_of_data_structures_introduction() {
+		String expectedurl = "https://dsportalapp.herokuapp.com/data-structures-introduction/time-complexity/";
+
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, dataStructureIntroPF.getCurrentUrl());
+
 	   
 	}
 
 	@Given("The user is on the Time Complexity page")
 	public void the_user_is_on_the_time_complexity_page() {
+		
 	   
 	}
 
 	@When("The user clicks Try Here buttton on theTime Complexity page")
 	public void the_user_clicks_try_here_buttton_on_the_time_complexity_page() {
+		dataStructureIntroPF.tryHereBtn.click();
+
 	   
 	}
 
 	@Then("The user should be redirected to a page having an try Editor with a Run button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
+		String expectedurl = "https://dsportalapp.herokuapp.com/tryEditor";
+
+		Assert.assertEquals("User is not on the Dashboard Page", expectedurl, dataStructureIntroPF.getCurrentUrl());
+
 	   
 	}
 
@@ -73,12 +85,12 @@ public class DataStructureIntroSteps{
 
 	@When("The user clicks the Run Button without entering the code in the Editor")
 	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor() {
-	   
+		dataStructureIntroPF.runBtn.click();	   
 	}
 
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
-	   
+		
 	}
 
 	@When("The user write the invalid code in Editor and click the Run Button")
