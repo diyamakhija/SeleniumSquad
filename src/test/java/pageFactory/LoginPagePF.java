@@ -5,6 +5,8 @@ import java.time.Duration;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utilities.ConfigReader;
+
 public class LoginPagePF extends BaseClass {
 
 	public LoginPagePF() {
@@ -27,9 +29,10 @@ public class LoginPagePF extends BaseClass {
 	public WebElement logInBtn;
 
 
-	public void pageURL() {
-		driver.get("https://dsportalapp.herokuapp.com/");
+	public void pageURL(String url) {
+		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 	}
+
 }
