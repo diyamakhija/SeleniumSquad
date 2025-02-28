@@ -28,7 +28,6 @@ public class LoginPagePF extends BaseClass {
 	@FindBy(xpath = "//div[@class='col-sm']/form/input[4]")
 	public WebElement logInBtn;
 
-
 	public void pageURL(String url) {
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
