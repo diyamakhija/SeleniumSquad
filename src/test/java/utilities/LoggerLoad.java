@@ -16,10 +16,6 @@ public class LoggerLoad {
 			logger.warn(message);
 		}
 
-		public static void error(String message, Exception e) {
-			logger.error(message, e);
-		}
-		
 		public static void error(String message) {
 			logger.error(message);
 		}
