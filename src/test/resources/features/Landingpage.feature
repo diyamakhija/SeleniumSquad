@@ -43,7 +43,9 @@ Feature: DS Algo Portal
     Given the user is on the login page 
     When the user enters valid credentials and checks the "Remember Me" option
     Then the user should remain logged in
-     
+    
+
+    
      @tag8
     Scenario:Verify that user able to sign out successfully
     Given The user is in the Home page after Sign in

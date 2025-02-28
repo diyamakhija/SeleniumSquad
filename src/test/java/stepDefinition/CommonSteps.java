@@ -20,5 +20,4 @@ public class CommonSteps {
 //		System.out.println(ExcelSheetReader.userCredential(3).get(1));
 		loginPagePF.logInBtn.click();
 	}
-	
 }
