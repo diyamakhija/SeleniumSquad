@@ -9,7 +9,7 @@ public class GraphPF {
 
     // Initializing the PageFactory elements
     public GraphPF() {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+        PageFactory.initElements(DriverFactory.getDriver("chrome"), this);
     }
 
     // WebElement for "Get Started" button in Graph Panel
