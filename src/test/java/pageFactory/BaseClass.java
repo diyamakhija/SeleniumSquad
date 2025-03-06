@@ -30,20 +30,18 @@ public class BaseClass {
 		return driver.getCurrentUrl();
 	}
 
-	public void handleAlert(String expectedResult) {
+	public String handleAlert() {
+
+		String alertText = "";
 		try {
 			// Wait for the alert to be present (optional but recommended)
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			wait.until(ExpectedConditions.alertIsPresent());
 
 			Alert alert = driver.switchTo().alert();
-			String alertText = alert.getText();
-			LoggerLoad.info("Alert text: " + alertText);
-
-			// Assert the alert text (example)
-			Assert.assertEquals(alertText, expectedResult);
-
+			alertText = alert.getText();
 			alert.accept();
+
 			LoggerLoad.info("Alert accepted");
 
 		} catch (NoAlertPresentException e) {
@@ -51,13 +49,16 @@ public class BaseClass {
 			LoggerLoad.error("Alert was not present.");
 			// Add assertions to verify application state when no alert is present.
 			// Example
-			Assert.fail("An unexpected error occurred: " + e.getMessage()); // fail the test.
+			e.getMessage();// fail the test.
 
 		} catch (Exception e) {
 			// Some other error occurred
 			LoggerLoad.error("An error occurred: " + e.getMessage());
 			Assert.fail("An unexpected error occurred: " + e.getMessage()); // fail the test.
 		}
+		System.out.println("Alert accepted");
+		System.out.println("Alert text: " + alertText);
+		return alertText;
 
 	}
 

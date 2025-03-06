@@ -11,7 +11,7 @@ import java.util.*;
 public class ExcelSheetReader {
 	//creates new instance of the HashMap class and given to the variable
 	//Map is a data structure that stores key-value pairs.
-	private static Map<String, List<List<String>>> excelData = new HashMap<>();;
+	private static Map<String, List<List<String>>> excelData = new HashMap<>();
 
 	public static Map<String, List<List<String>>> getData(String filePath) {
 
@@ -90,20 +90,19 @@ public class ExcelSheetReader {
 	public static List<String> pythonCodeData(int row) {
 		return getExcelSheets().get("pythonCode").get(row);
 		 
-
 	}
-	public static List<String> alertCompare(int row) {
 
-		return getExcelSheets().get("Alerts").get(row);
-		 
-
-	}
 	public static List<String> outputCompare(int row) {
 
 		return getExcelSheets().get("pythonCode").get(row);
 		 
+	}
+	public static List<String> expectedUrl(int row) {
+
+		return getExcelSheets().get("expectedUrl").get(row);	 
 
 	}
+	
 
 
 }
