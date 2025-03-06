@@ -117,4 +117,12 @@ public class ConfigReader {
 
 		return getPropertyData().getProperty("expectedurl12");
 	}
+	public static String getexpectedurl51() {
+
+		return getPropertyData().getProperty("expectedurl51");
+	}
+	public static String getexpectedurl52() {
+
+		return getPropertyData().getProperty("expectedurl52");
+	}
 }

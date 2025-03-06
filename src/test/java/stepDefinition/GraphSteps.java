@@ -1,15 +1,10 @@
 package stepDefinition;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.junit.Assert;
-import webDriverManager.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Graph {
+public class GraphSteps {
 	
 	
 	@Given("The user is signed in to DSAlgo Portal")

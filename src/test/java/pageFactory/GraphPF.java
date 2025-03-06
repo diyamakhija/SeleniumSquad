@@ -2,16 +2,11 @@ package pageFactory;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import webDriverManager.DriverFactory;
+
 
 public class GraphPF {
 
-    // Initializing the PageFactory elements
-    public GraphPF() {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
-    }
-
+ 
     // WebElement for "Get Started" button in Graph Panel
     @FindBy(xpath = "//button[text()='Get Started']")
     private WebElement getStartedButton;
