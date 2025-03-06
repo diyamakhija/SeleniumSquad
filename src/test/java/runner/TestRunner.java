@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
 		features = { "src/test/resources/features" }, // location of feature files
 		glue = {"stepDefinition","hooks"}, // location of step definition files
 		plugin = { "pretty", "html:target/cucumber-reports/dsalgo.html",
-				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" }, dryRun = false // or dryRun = false
+				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" }, dryRun = true // or dryRun = false
 ) // reporting purpose
 
 public class TestRunner extends AbstractTestNGCucumberTests {
