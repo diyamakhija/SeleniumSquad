@@ -2,15 +2,12 @@
 package stepDefinition;
 
 import org.junit.Assert;
-import org.openqa.selenium.NoAlertPresentException;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageFactory.BaseClass;
 import pageFactory.DataStructureIntroPF;
 import pageFactory.LoginPagePF;
-import utilities.ConfigReader;
 import utilities.ExcelSheetReader;
 import utilities.LoggerLoad;
 
@@ -107,9 +104,8 @@ public class DataStructureIntroSteps {
 	@Then("The user should able to see  an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 
-		
-		Assert.assertEquals("An unexpected error occurred:" ,
-				dataStructureIntroPF.handleAlert1(),dataStructureIntroPF.expectederrorResult());
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.handleAlert1(),
+				dataStructureIntroPF.expectederrorResult());
 
 	}
 
