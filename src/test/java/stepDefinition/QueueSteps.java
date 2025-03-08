@@ -116,6 +116,7 @@ public class QueueSteps {
 
 		Assert.assertEquals("An unexpected error occurred:", queuePF.nameHandleAlert(),
 				queuePF.expectedNameErrorResult());
+		
 
 	}
 
@@ -131,7 +132,7 @@ public class QueueSteps {
 
 		Assert.assertEquals("An unexpected error occurred:", queuePF.syntaxHandleAlert(),
 				queuePF.expectedSyntaxErrorResult());
-
+		
 	}
 
 	@When("The user write the valid code in Editor and click the {string} Button")

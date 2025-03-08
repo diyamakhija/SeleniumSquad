@@ -1,17 +1,23 @@
 package utilities;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelSheetReader {
+
 	// creates new instance of the HashMap class and given to the variable
 	// Map is a data structure that stores key-value pairs.
-	private static Map<String, List<List<String>>> excelData = new HashMap<>();;
+	private static Map<String, List<List<String>>> excelData = new HashMap<>();
 
 	public static Map<String, List<List<String>>> getData(String filePath) {
 

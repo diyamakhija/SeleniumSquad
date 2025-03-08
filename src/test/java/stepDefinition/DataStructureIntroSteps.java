@@ -32,8 +32,9 @@ public class DataStructureIntroSteps {
 
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
+		
+		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl5(),
 
-		Assert.assertEquals("User is not on the Dashboard Page",dataStructureIntroPF.expectedUrl5() ,
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -64,7 +65,8 @@ public class DataStructureIntroSteps {
 	@Given("The user is on the Time Complexity page")
 	public void the_user_is_on_the_time_complexity_page() {
 
-		dataStructureIntroPF.dataStrIntro_getStartedBtn.click();
+
+		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		dataStructureIntroPF.timeComplexityBtn();
 		LoggerLoad.info("The user is on the Time Complexity page");
 	}
@@ -79,7 +81,8 @@ public class DataStructureIntroSteps {
 	@Then("The user should be redirected to a page having an try Editor with a Run button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
 
-		Assert.assertEquals("User is not on the Dashboard Page",dataStructureIntroPF.expectedUrl3(),
+		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl3(),
+
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -106,7 +109,6 @@ public class DataStructureIntroSteps {
 
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.handleAlert1(),
 				dataStructureIntroPF.expectedErrorResult());
-
 
 	}
 
@@ -152,21 +154,20 @@ public class DataStructureIntroSteps {
 	@Then("The user should able to see output in the console")
 	public void the_user_should_able_to_see_output_in_the_console() {
 
-		System.out.println(ExcelSheetReader.pythonCodeData(1).get(1));
-		Assert.assertEquals(ExcelSheetReader.pythonCodeData(1).get(1), dataStructureIntroPF.output.getText());
+		Assert.assertEquals(dataStructureIntroPF.validOutput(), dataStructureIntroPF.output.getText());
 
 	}
 
 	@Given("The user is in the Time Complexity page")
 	public void the_user_is_in_the_time_complexity_page() {
-		dataStructureIntroPF.dataStrIntro_getStartedBtn.click();
-		dataStructureIntroPF.timeComplexityBtn.click();
+		dataStructureIntroPF.dataStrIntro_getStartedBtn();
+		dataStructureIntroPF.timeComplexityBtn();
 
 	}
 
 	@When("The user clicks the Practice Questions button")
 	public void the_user_clicks_the_practice_questions_button() {
-		dataStructureIntroPF.practiceQuestionsBtn.click();
+		dataStructureIntroPF.practiceQuestionsBtn();
 
 	}
 
@@ -204,6 +205,7 @@ public class DataStructureIntroSteps {
 	public void the_user_is_in_the_data_structures_introduction_page() {
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		LoggerLoad.info("The user is in the Data Structures - Introduction page");
+
 	}
 
 	@When("The user clicks the Numpy Ninja on the top left corner of the page")
@@ -216,7 +218,8 @@ public class DataStructureIntroSteps {
 	@Then("The user should land in the portal beginning page with Get Started Button")
 	public void the_user_should_land_in_the_portal_beginning_page_with_get_started_button() {
 
-		Assert.assertEquals("User is not on the Dashboard Page",dataStructureIntroPF.expectedUrl0(),
+
+		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl0(),
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
