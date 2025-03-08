@@ -133,45 +133,43 @@ Feature: Queue feature
 
   @tag22
   Scenario: Verify that user receives error when click on "Run" button without entering code for Queue Operations page
-    Given The user is in the tryEditor page of Implementation of Queue in Python
+    Given The user is in the tryEditor page of  Queue Operations page
     When The user clicks the Run Button without entering the code in the Editor page
     Then The user should able to see and error message in alert window
 
   @tag23
   Scenario: Verify that user receives error for invalid python code(name error) for Queue Operations page
-    Given The user is in the tryEditor page of  Queue Operations
+    Given The user is in the tryEditor page of  Queue Operations page
     When The user write the invalid name code in Editor and click the Run Button
     Then The user should able to see a name error message in alert window
 
   @tag24
   Scenario: Verify that user receives error for invalid python code(syntax error) for Queue Operations page
-    Given The user is in the tryEditor page of  Queue Operations
+    Given The user is in the tryEditor page of  Queue Operations page
     When The user write the invalid syntax code in Editor and click the Run Button
     Then The user should able to see a syntax error msg in alert window
 
 
   @tag25
   Scenario: Verify that user is able to see output for valid python code for Queue Operations page
-    Given The user is in the tryEditor page of  Queue Operations
+    Given The user is in the tryEditor page of  Queue Operations page
     When The user write the valid code in Editor and click the "Run" Button
     Then The user should able to "see output" in the console
 
   @tag26
   Scenario: Verify that user is able to navigate to Practice Questions Page for Implementation of Queue in Python page
-    Given The user is in the Implementation of Queue in Python page
+    Given The user is on the  Queue Operations page
     When The user clicks Practice Questions button
     Then The user should be redirected to Practice Questions page
-
 
  @tag28
   Scenario: Verify that user is able  to navigate to the selected tree data structures from dropdown options
     Given The user is in the "dropdown" section
     When The user selects the "option" from dropdown section
     Then The user should land in the page selected in the dropdown list.
+    
   @tag29
   Scenario: Verify the user is able to go to the Portal beginning page which has Get Started Button"
     Given The user is in the Queue page after Sign in
     When The user clicks the "Numpy Ninja" on the top left corner of the page
     Then The user should land in the portal beginning page which has Get Started Button
-
- 

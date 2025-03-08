@@ -12,13 +12,11 @@ public class CommonSteps {
 	public void the_user_sign_in_to_ds_algo_portal() {
 		
 		loginPagePF.pageURL(ConfigReader.getPageURL());
-		loginPagePF.getStartedBtn.click();
-		loginPagePF.signInBtn.click();
-		loginPagePF.userNameField.sendKeys(ExcelSheetReader.userCredential(3).get(0));
-//		System.out.println(ExcelSheetReader.userCredential(3).get(0));
-		loginPagePF.passwordField.sendKeys(ExcelSheetReader.userCredential(3).get(1));
-//		System.out.println(ExcelSheetReader.userCredential(3).get(1));
-		loginPagePF.logInBtn.click();
+		loginPagePF.getStartedBtn();
+		loginPagePF.signInBtn();
+		loginPagePF.userNameField();
+		loginPagePF.passwordField();
+		loginPagePF.logInBtn();
 	}
 	
 }

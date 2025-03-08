@@ -9,23 +9,26 @@ import java.io.IOException;
 import java.util.*;
 
 public class ExcelSheetReader {
-	//creates new instance of the HashMap class and given to the variable
-	//Map is a data structure that stores key-value pairs.
+	// creates new instance of the HashMap class and given to the variable
+	// Map is a data structure that stores key-value pairs.
 	private static Map<String, List<List<String>>> excelData = new HashMap<>();;
 
 	public static Map<String, List<List<String>>> getData(String filePath) {
 
-		//A "for-each loop" (also known as an "enhanced for loop") is a concise way to iterate over elements in a collection (like an array, List, Set, or Map) in Java
+		// A "for-each loop" (also known as an "enhanced for loop") is a concise way to
+		// iterate over elements in a collection (like an array, List, Set, or Map) in
+		// Java
 		if (excelData.isEmpty()) {
-			
-			//creates and initializes the new file instance to the variable 
-			 File file = new File(filePath);
-			 
-			 //creates and initializes the FileInputStream object to the variable
-			 //FileInputStream object, which allows you to read data from the file "excelPythonCode"
+
+			// creates and initializes the new file instance to the variable
+			File file = new File(filePath);
+
+			// creates and initializes the FileInputStream object to the variable
+			// FileInputStream object, which allows you to read data from the file
+			// "excelPythonCode"
 			try (FileInputStream fis = new FileInputStream(file);
-					
-		    //creates and initializes the XSSFWorkbook object to the variable
+
+					// creates and initializes the XSSFWorkbook object to the variable
 					Workbook workbook = new XSSFWorkbook(fis)) {
 
 				// Iterate through all sheets
@@ -40,12 +43,12 @@ public class ExcelSheetReader {
 						for (Cell cell : row) {
 							rowData.add(getCellValue(cell));
 						}
-						
-						//adds up every single row of data
-						rows.add(rowData);
-					}					
 
-					//put() This is the method used to add a new key-value pair to a Map
+						// adds up every single row of data
+						rows.add(rowData);
+					}
+
+					// put() This is the method used to add a new key-value pair to a Map
 					excelData.put(sheet.getSheetName(), rows);
 					fis.close();
 				}
@@ -54,7 +57,7 @@ public class ExcelSheetReader {
 			}
 		}
 
-		//output
+		// output
 		return excelData;
 	}
 
@@ -78,8 +81,6 @@ public class ExcelSheetReader {
 			return "Unknown";
 		}
 	}
-	
-	
 
 	public static List<String> userCredential(int row) {
 
@@ -89,21 +90,13 @@ public class ExcelSheetReader {
 
 	public static List<String> pythonCodeData(int row) {
 		return getExcelSheets().get("pythonCode").get(row);
-		 
-
-	}
-	public static List<String> alertCompare(int row) {
-
-		return getExcelSheets().get("Alerts").get(row);
-		 
-
-	}
-	public static List<String> outputCompare(int row) {
-
-		return getExcelSheets().get("pythonCode").get(row);
-		 
 
 	}
 
+	public static List<String> expectedUrl(int row) {
+
+		return getExcelSheets().get("expectedUrl").get(row);
+
+	}
 
 }
