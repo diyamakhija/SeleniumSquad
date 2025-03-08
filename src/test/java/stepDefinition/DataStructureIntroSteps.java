@@ -32,7 +32,7 @@ public class DataStructureIntroSteps {
 
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
-		
+
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl5(),
 
 				dataStructureIntroPF.getCurrentUrl());
@@ -65,7 +65,6 @@ public class DataStructureIntroSteps {
 	@Given("The user is on the Time Complexity page")
 	public void the_user_is_on_the_time_complexity_page() {
 
-
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		dataStructureIntroPF.timeComplexityBtn();
 		LoggerLoad.info("The user is on the Time Complexity page");
@@ -82,7 +81,6 @@ public class DataStructureIntroSteps {
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
 
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl3(),
-
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -93,7 +91,6 @@ public class DataStructureIntroSteps {
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		dataStructureIntroPF.timeComplexityBtn();
 		dataStructureIntroPF.tryHereBtn();
-
 		LoggerLoad.info("The user is in the tryEditor page of Time Complexity");
 
 	}
@@ -127,10 +124,10 @@ public class DataStructureIntroSteps {
 				dataStructureIntroPF.expectedNameErrorResult());
 
 	}
-	
+
 	@When("The user write the invalid syntaxcode in Editor and click the Run Button")
 	public void the_user_write_the_invalid_syntaxcode_in_editor_and_click_the_run_button() {
-	  
+
 		dataStructureIntroPF.input1();
 		dataStructureIntroPF.runBtn();
 	}
@@ -160,6 +157,7 @@ public class DataStructureIntroSteps {
 
 	@Given("The user is in the Time Complexity page")
 	public void the_user_is_in_the_time_complexity_page() {
+
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		dataStructureIntroPF.timeComplexityBtn();
 
@@ -167,6 +165,7 @@ public class DataStructureIntroSteps {
 
 	@When("The user clicks the Practice Questions button")
 	public void the_user_clicks_the_practice_questions_button() {
+
 		dataStructureIntroPF.practiceQuestionsBtn();
 
 	}
@@ -188,6 +187,7 @@ public class DataStructureIntroSteps {
 
 	@When("The user selects the option from dropdown section")
 	public void the_user_selects_the_option_from_dropdown_section() {
+
 		dataStructureIntroPF.dropDownBtn();
 		dataStructureIntroPF.queueOption();
 
@@ -203,6 +203,7 @@ public class DataStructureIntroSteps {
 
 	@Given("The user is in the Data Structures - Introduction page")
 	public void the_user_is_in_the_data_structures_introduction_page() {
+
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		LoggerLoad.info("The user is in the Data Structures - Introduction page");
 
@@ -217,7 +218,6 @@ public class DataStructureIntroSteps {
 
 	@Then("The user should land in the portal beginning page with Get Started Button")
 	public void the_user_should_land_in_the_portal_beginning_page_with_get_started_button() {
-
 
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl0(),
 				dataStructureIntroPF.getCurrentUrl());

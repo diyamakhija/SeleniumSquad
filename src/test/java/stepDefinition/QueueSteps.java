@@ -18,12 +18,14 @@ public class QueueSteps {
 
 	@Given("The user is in the {string} after sign in")
 	public void the_user_is_in_the_after_sign_in(String string) {
+
 		LoggerLoad.info("The user is in the home page after signin");
 
 	}
 
 	@When("The user clicks the {string} button in Queue panel 	+")
 	public void the_user_clicks_the_button_in_queue_panel(String string) {
+
 		queuePF.queue_getStartedBtn();
 
 	}
@@ -60,8 +62,8 @@ public class QueueSteps {
 	@Given("The user is in the Implementation of Queue in Python page")
 	public void the_user_is_in_the_implementation_of_queue_in_python_page() {
 
-		queuePF.queue_getStartedBtn.click();
-		queuePF.implementationOfQueueInPythonBtn.click();
+		queuePF.queue_getStartedBtn();
+		queuePF.implementationOfQueueInPythonBtn();
 		LoggerLoad.info("The user is in the Implementation of Queue in Python page");
 
 	}
@@ -92,6 +94,7 @@ public class QueueSteps {
 
 	@When("The user clicks the Run Button without entering the code in the Editor page")
 	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_page() {
+
 		queuePF.runBtn();
 
 	}
@@ -116,7 +119,6 @@ public class QueueSteps {
 
 		Assert.assertEquals("An unexpected error occurred:", queuePF.nameHandleAlert(),
 				queuePF.expectedNameErrorResult());
-		
 
 	}
 
@@ -132,11 +134,12 @@ public class QueueSteps {
 
 		Assert.assertEquals("An unexpected error occurred:", queuePF.syntaxHandleAlert(),
 				queuePF.expectedSyntaxErrorResult());
-		
+
 	}
 
 	@When("The user write the valid code in Editor and click the {string} Button")
 	public void the_user_write_the_valid_code_in_editor_and_click_the_button(String string) {
+
 		queuePF.input2();
 		queuePF.runBtn();
 
