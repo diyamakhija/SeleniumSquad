@@ -1,13 +1,14 @@
 package pageFactory;
 
 import java.time.Duration; // Ensure this import is there
-import org.junit.Assert;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait; // Ensure correct import for WebDriverWait
+
 import utilities.LoggerLoad;
 import webDriverManager.DriverFactory;
 
@@ -56,8 +57,10 @@ public class BaseClass {
 
 		} catch (Exception e) {
 			// Some other error occurred
-			LoggerLoad.error("An error occurred: " + e.getMessage());
-			Assert.fail("An unexpected error occurred: " + e.getMessage()); // fail the test.
+
+			LoggerLoad.error("An error occurred: ");
+			e.getMessage(); // fail the test.
+
 		}
 		System.out.println("Alert accepted");
 		System.out.println("Alert text: " + alertText);

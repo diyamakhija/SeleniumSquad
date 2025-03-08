@@ -60,5 +60,4 @@ public class ConfigReader {
 		return getPropertyData().getProperty("excelFilePath");
 
 	}
-
 }

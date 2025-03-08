@@ -32,8 +32,9 @@ public class DataStructureIntroSteps {
 
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
-
+		
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl5(),
+
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -64,6 +65,7 @@ public class DataStructureIntroSteps {
 	@Given("The user is on the Time Complexity page")
 	public void the_user_is_on_the_time_complexity_page() {
 
+
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		dataStructureIntroPF.timeComplexityBtn();
 		LoggerLoad.info("The user is on the Time Complexity page");
@@ -80,6 +82,7 @@ public class DataStructureIntroSteps {
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
 
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl3(),
+
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -104,13 +107,13 @@ public class DataStructureIntroSteps {
 	@Then("The user should able to see  an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 
-		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.handleAlert1(),
-				dataStructureIntroPF.expectederrorResult());
+		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.handleAlert1(),
+				dataStructureIntroPF.expectedErrorResult());
 
 	}
 
-	@When("The user write the name invalid code in Editor and click the Run Button")
-	public void the_user_write_the_name_invalid_code_in_editor_and_click_the_run_button() {
+	@When("The user write the invalid namecode in Editor and click the Run Button")
+	public void the_user_write_the_invalid_namecode_in_editor_and_click_the_run_button() {
 
 		dataStructureIntroPF.input();
 		dataStructureIntroPF.runBtn();
@@ -120,29 +123,29 @@ public class DataStructureIntroSteps {
 	@Then("The user should able to see an name error message in alert window")
 	public void the_user_should_able_to_see_an_name_error_message_in_alert_window() {
 
-		Assert.assertEquals("The user should able to see an name error message in alert window",
-				dataStructureIntroPF.nameHandleAlert(), dataStructureIntroPF.expectedNameErrorResult());
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.nameHandleAlert(),
+				dataStructureIntroPF.expectedNameErrorResult());
 
 	}
-
-	@When("The user write the syntax invalid code in Editor and click the Run Button")
-	public void the_user_write_the_syntax_invalid_code_in_editor_and_click_the_run_button() {
-
+	
+	@When("The user write the invalid syntaxcode in Editor and click the Run Button")
+	public void the_user_write_the_invalid_syntaxcode_in_editor_and_click_the_run_button() {
+	  
 		dataStructureIntroPF.input1();
 		dataStructureIntroPF.runBtn();
-
 	}
 
 	@Then("The user should able to see an syntax error message in alert window")
 	public void the_user_should_able_to_see_an_syntax_error_message_in_alert_window() {
 
-		Assert.assertEquals("The user should able to see an name error message in alert window",
-				dataStructureIntroPF.syntaxHandleAlert(), dataStructureIntroPF.expectedSyntaxErrorResult());
+		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.syntaxHandleAlert(),
+				dataStructureIntroPF.expectedSyntaxErrorResult());
 
 	}
 
 	@When("The user write the valid code in Editor and click the Run Button")
 	public void the_user_write_the_valid_code_in_editor_and_click_the_run_button() {
+
 		dataStructureIntroPF.input2();
 		dataStructureIntroPF.runBtn();
 
@@ -214,6 +217,7 @@ public class DataStructureIntroSteps {
 
 	@Then("The user should land in the portal beginning page with Get Started Button")
 	public void the_user_should_land_in_the_portal_beginning_page_with_get_started_button() {
+
 
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl0(),
 				dataStructureIntroPF.getCurrentUrl());

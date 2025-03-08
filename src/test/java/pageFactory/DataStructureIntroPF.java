@@ -74,11 +74,6 @@ public class DataStructureIntroPF extends BaseClass {
 		input.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
 	}
 
-	public void editorInput() {
-
-		editorInput.click();
-	}
-
 	public void output() {
 
 		output.click();
@@ -138,7 +133,8 @@ public class DataStructureIntroPF extends BaseClass {
 		return ExcelSheetReader.pythonCodeData(3).get(1);
 
 	}
-	public String expectederrorResult() {
+
+	public String expectedErrorResult() {
 
 		return ExcelSheetReader.pythonCodeData(4).get(1);
 

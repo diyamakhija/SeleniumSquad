@@ -1,7 +1,6 @@
 
-
 @DS
-Feature: DS feature
+Feature: DataStructureIntro feature
   
   Background:
     Given The user sign in to dsAlgo Portal
@@ -33,13 +32,13 @@ Feature: DS feature
     @tag5
   Scenario: Verify that user receives error for invalid python code(name error) for Time Complexity page
     Given The user is in the tryEditor page of Time Complexity
-    When The user write the name invalid code in Editor and click the Run Button
+    When The user write the invalid namecode in Editor and click the Run Button
     Then The user should able to see an name error message in alert window
     
     @tag6
   Scenario: Verify that user receives error for invalid python code(syntax error) for Time Complexity page
     Given The user is in the tryEditor page of Time Complexity
-    When The user write the syntax invalid code in Editor and click the Run Button
+    When The user write the invalid syntaxcode in Editor and click the Run Button
     Then The user should able to see an syntax error message in alert window
     
     @tag7
@@ -66,6 +65,3 @@ Feature: DS feature
     When The user clicks the Numpy Ninja on the top left corner of the page
     Then The user should land in the portal beginning page with Get Started Button
     
-
-
-  
