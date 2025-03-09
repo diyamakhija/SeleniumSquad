@@ -10,6 +10,7 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import runner.TestRunner;
 import utilities.ConfigReader;
 import utilities.ExcelSheetReader;
 import webDriverManager.DriverFactory;
@@ -29,7 +30,7 @@ public class Hooks {
 
 	@Before
 	public void setUp() {
-		DriverFactory.getDriver(ConfigReader.getBrowser());
+		DriverFactory.getDriver();
 	}
 
 	@After
