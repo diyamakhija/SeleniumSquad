@@ -10,7 +10,6 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
-import runner.TestRunner;
 import utilities.ConfigReader;
 import utilities.ExcelSheetReader;
 import webDriverManager.DriverFactory;
@@ -35,7 +34,7 @@ public class Hooks {
 
 	@After
 	public void tearDown(Scenario scenario) {
-		WebDriver webDriver = DriverFactory.getDriver(ConfigReader.getBrowser());
+		WebDriver webDriver = DriverFactory.getDriver();
 		if (scenario.isFailed()) {
 			byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
 			saveScreenshot(screenshot);

@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utilities.ConfigReader;
 import utilities.ExcelSheetReader;
 
 public class LoginPagePF extends BaseClass {
