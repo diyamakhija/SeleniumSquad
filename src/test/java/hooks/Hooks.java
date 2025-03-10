@@ -16,6 +16,8 @@ import webDriverManager.DriverFactory;
 
 public class Hooks {
 
+
+
 	@BeforeAll
 	public static void runall() {
 
@@ -27,6 +29,10 @@ public class Hooks {
 
 	}
 
+//	@Before
+//	public void setUp() {
+//		DriverFactory.getDriver();
+//	}
 	@Before
 	public void setUp() {
 		DriverFactory.getDriver(ConfigReader.getBrowser());
@@ -35,13 +41,18 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 		WebDriver webDriver = DriverFactory.getDriver(ConfigReader.getBrowser());
+<<<<<<< Updated upstream
+=======
+
+//		WebDriver webDriver = DriverFactory.getDriver();
+>>>>>>> Stashed changes
 		if (scenario.isFailed()) {
 			byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
 			saveScreenshot(screenshot);
 			scenario.attach(screenshot, "image/png", "name");
 			Allure.addAttachment(scenario.getId(), screenshot.toString());
 		}
-		DriverFactory.quitDriver();
+//		DriverFactory.quitDriver();
 	}
 
 	@Attachment(value = "Screenshot", type = "image/png")

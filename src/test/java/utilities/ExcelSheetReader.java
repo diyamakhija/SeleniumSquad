@@ -14,12 +14,14 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelSheetReader {
-
+	
+//private static ThreadLocal <Map <String, List<List<String>>>> tlexcelData = new  ThreadLocal<>();
 	// creates new instance of the HashMap class and given to the variable
 	// Map is a data structure that stores key-value pairs.
 	private static Map<String, List<List<String>>> excelData = new HashMap<>();
 
 	public static Map<String, List<List<String>>> getData(String filePath) {
+//		Map<String, List<List<String>>> excelData = tlexcelData .get();
 
 		// A "for-each loop" (also known as an "enhanced for loop") is a concise way to
 		// iterate over elements in a collection (like an array, List, Set, or Map) in
@@ -53,6 +55,8 @@ public class ExcelSheetReader {
 						// adds up every single row of data
 						rows.add(rowData);
 					}
+					
+//					tlexcelData.set(excelData);
 
 					// put() This is the method used to add a new key-value pair to a Map
 					excelData.put(sheet.getSheetName(), rows);

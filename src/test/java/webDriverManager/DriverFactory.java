@@ -15,7 +15,20 @@ public class DriverFactory {
 		    WebDriver driver = tlDriver.get();
 		       if (driver == null) {
 
+<<<<<<< Updated upstream
 			
+=======
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+
+//	public static WebDriver getDriver() {
+    public static WebDriver getDriver(String browser) {
+
+
+		WebDriver driver = tlDriver.get();
+		if (driver == null) {
+//			String browser = TestRunner.getBrowserName();
+
+>>>>>>> Stashed changes
 			switch (browser.toLowerCase()) {
 			case "chrome":
 				

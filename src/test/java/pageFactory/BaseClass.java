@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait; // Ensure correct import for WebDriverWait
 
+import utilities.ExcelSheetReader;
 import utilities.LoggerLoad;
 import webDriverManager.DriverFactory;
 
@@ -16,7 +17,14 @@ public class BaseClass {
 	protected WebDriver driver;
 
 	public BaseClass() {
+<<<<<<< Updated upstream
 		this.driver = DriverFactory.getDriver("chrome"); // Initialize driver
+=======
+
+		this.driver = DriverFactory.getDriver("chrome"); 
+
+//		this.driver = DriverFactory.getDriver(); // Initialize driver
+>>>>>>> Stashed changes
 		PageFactory.initElements(driver, this);
 
 		// **Changed**: Using Duration for implicit wait

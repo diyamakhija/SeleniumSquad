@@ -9,6 +9,8 @@ import utilities.ConfigReader;
 import utilities.ExcelSheetReader;
 
 public class LoginPagePF extends BaseClass {
+	ExcelSheetReader excelSheetReader = new ExcelSheetReader();
+
 
 	public LoginPagePF() {
 		super();

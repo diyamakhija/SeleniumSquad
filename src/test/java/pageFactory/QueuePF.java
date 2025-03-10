@@ -90,10 +90,10 @@ public class QueuePF extends BaseClass {
 		implementationUsingCollectionsDeque.click();
 	}
 
-	public void output() {
-
-		output.click();
-	}
+//	public void output() {
+//
+//		output.click();
+//	}
 
 	public void implementationUsingArray() {
 
