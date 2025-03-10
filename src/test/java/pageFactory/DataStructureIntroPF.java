@@ -7,9 +7,6 @@ import utilities.ExcelSheetReader;
 
 public class DataStructureIntroPF extends BaseClass {
 
-	public DataStructureIntroPF() {
-		super();
-	}
 
 	@FindBy(xpath = "//a[text()='Get Started']")
 	public WebElement dataStrIntro_getStartedBtn;

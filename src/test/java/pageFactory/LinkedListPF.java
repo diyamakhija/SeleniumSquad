@@ -11,8 +11,6 @@ public class LinkedListPF extends BaseClass {
 
     WebDriver driver;
 
-   
-
     @FindBy(xpath = "//div[@class='col'][3]/div/div/a")
     private WebElement linkedListGetStartedBtn;
 
@@ -61,10 +59,6 @@ public class LinkedListPF extends BaseClass {
 	@FindBy(xpath = "//div[@class='bs-example']/nav/a")
 	public WebElement numpyNinjaBtn;
 	
-
-    public LinkedListPF() {
-		super();
-    }
 
     public void linkedListGetStartedBtn() {
     	linkedListGetStartedBtn.click();
