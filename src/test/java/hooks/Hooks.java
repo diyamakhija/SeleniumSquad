@@ -29,12 +29,12 @@ public class Hooks {
 
 	@Before
 	public void setUp() {
-		DriverFactory.getDriver(ConfigReader.getBrowser());
+		DriverFactory.getDriver();
 	}
 
 	@After
 	public void tearDown(Scenario scenario) {
-		WebDriver webDriver = DriverFactory.getDriver(ConfigReader.getBrowser());
+		WebDriver webDriver = DriverFactory.getDriver();
 		if (scenario.isFailed()) {
 			byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
 			saveScreenshot(screenshot);
