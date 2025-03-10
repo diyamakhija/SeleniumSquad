@@ -2,12 +2,10 @@ package pageFactory;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import utilities.ExcelSheetReader;
 
 public class LinkedListPF extends BaseClass {
 
-  
 
     @FindBy(xpath = "//div[@class='col'][3]/div/div/a")
     private WebElement linkedListGetStartedBtn;
