@@ -7,10 +7,6 @@ import utilities.ExcelSheetReader;
 
 public class QueuePF extends BaseClass {
 
-	public QueuePF() {
-		super();
-	}
-
 	@FindBy(xpath = "//div[@class='col'][5]/div/div/a")
 	public WebElement queue_getStartedBtn;
 

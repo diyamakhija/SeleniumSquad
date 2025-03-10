@@ -13,7 +13,6 @@ import utilities.LoggerLoad;
 public class QueueSteps {
 	LoginPagePF loginPagePF = new LoginPagePF();
 	QueuePF queuePF = new QueuePF();
-	ExcelSheetReader excelSheetReader = new ExcelSheetReader();
 	LoggerLoad loggerLoad = new LoggerLoad();
 
 	@Given("The user is in the {string} after sign in")

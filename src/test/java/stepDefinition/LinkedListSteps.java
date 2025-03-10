@@ -17,12 +17,14 @@ public class LinkedListSteps {
 	
 	@Given("The user is in the Homepage after Sign in")
 	public void the_user_is_in_the_homepage_after_sign_in() { 
+		
 		LoggerLoad.info("The user is in the home page after signin");
 
 	}
 
 	@When("The user clicks the Get Started button in Linked List panel")
 	public void the_user_clicks_the_get_started_button_in_linked_list_panel() {
+		
 		linkedListPF.linkedListGetStartedBtn();
 	    
 	}
