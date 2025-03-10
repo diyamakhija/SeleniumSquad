@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Parallel Test Suite" parallel="classes" thread-count="3">
+<suite name="Parallel Test Suite" thread-count="3">
   <test name="DS Algo Test" >
   	<parameter name="browser" value="chrome" />
     <classes>
