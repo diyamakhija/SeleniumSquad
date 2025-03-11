@@ -15,8 +15,10 @@
         <version>3.5.2</version>
         <configuration>
           <suiteXmlFiles>
+          
             <suiteXmlFile>testng.xml</suiteXmlFile>
            <!-- <suiteXmlFile>testngcrossbrowser.xml</suiteXmlFile> -->
+
           </suiteXmlFiles>
         </configuration>
         
