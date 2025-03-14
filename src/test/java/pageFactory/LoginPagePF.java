@@ -56,6 +56,10 @@ public class LoginPagePF extends BaseClass {
 		pageURL(ConfigReader.getPageURL());
 	}
 	
+	public String expectedUrl64() {
+
+		return ExcelSheetReader.expectedUrl(64).get(0);
+	}
 	
 
 	public void pageURL(String url) {
