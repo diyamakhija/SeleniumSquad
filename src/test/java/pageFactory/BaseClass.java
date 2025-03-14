@@ -16,11 +16,11 @@ public class BaseClass {
 	protected WebDriver driver;
 
 	public BaseClass() {
-		
+
 		this.driver = DriverFactory.getDriver(); // Initialize driver
 		PageFactory.initElements(driver, this);
 
- 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Implicit wait
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Implicit wait
 
 	}
 
