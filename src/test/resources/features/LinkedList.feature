@@ -154,7 +154,7 @@ Feature: Linked List feature
     When The user write the validcode in Editor and click the Run Button
     Then The user should able to see out_put in the console
      
-@tag26
+@tag26asser
   Scenario: Verify that user is able to navigate to Traversal page
     Given The user is in the  Linked list page after sign in
     When The user clicks Traversal button

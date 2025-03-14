@@ -1,11 +1,7 @@
 package pageFactory;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.ExcelSheetReader;
 
@@ -21,8 +17,8 @@ public class DataStructureIntroPF extends BaseClass {
 	@FindBy(xpath = "//a[text()='Try here>>>']")
 	public WebElement tryHereBtn;
 
-	@FindBy(xpath = "//form[@id='answer_form']")
-	public WebElement form;
+	@FindBy(xpath = "//textarea[@tabindex='0']")
+	public WebElement input;
 
 	@FindBy(xpath = "//form/div/div/div/textarea")
 	public WebElement editorInput;
@@ -58,28 +54,21 @@ public class DataStructureIntroPF extends BaseClass {
 	public void tryHereBtn() {
 
 		tryHereBtn.click();
-
 	}
 
-	public void nameinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
+	public void input() {
+
+		input.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
 	}
 
-	public void syntaxinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
+	public void input1() {
+
+		input.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
 	}
 
-	public void validinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
+	public void input2() {
+
+		input.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
 	}
 
 	public void output() {
@@ -114,41 +103,37 @@ public class DataStructureIntroPF extends BaseClass {
 
 	public String handleAlert1() {
 
-		 String handleAlert1 = handleAlert();
-		 return handleAlert1;
-		  
+		return handleAlert();
+
 	}
 
 	public String nameHandleAlert() {
 
-		 String nameHandleAlert = handleAlert();
-		 return nameHandleAlert;
+		return handleAlert();
 
 	}
 
 	public String syntaxHandleAlert() {
 
-		 String syntaxHandleAlert = handleAlert();
-		 return syntaxHandleAlert;
+		return handleAlert();
+
 	}
 
 	public String expectedNameErrorResult() {
 
-		String  expectedNameErrorResult=ExcelSheetReader.pythonCodeData(2).get(1);
-		return expectedNameErrorResult;
+		return ExcelSheetReader.pythonCodeData(2).get(1);
 
 	}
 
 	public String expectedSyntaxErrorResult() {
 
-		 String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3).get(1);
-		 return expectedSyntaxErrorResult ;
+		return ExcelSheetReader.pythonCodeData(3).get(1);
+
 	}
 
 	public String expectedErrorResult() {
 
-		String expectederrorResult = ExcelSheetReader.pythonCodeData(4).get(1);
-		 return expectederrorResult;
+		return ExcelSheetReader.pythonCodeData(4).get(1);
 
 	}
 
