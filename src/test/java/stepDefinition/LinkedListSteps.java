@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactory.LinkedListPF;
 import pageFactory.LoginPagePF;
-import utilities.ExcelSheetReader;
 import utilities.LoggerLoad;
 
 public class LinkedListSteps {
@@ -100,14 +99,14 @@ public class LinkedListSteps {
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 	    
-		Assert.assertEquals("An unexpected error occurred:", linkedListPF.handleAlert1(), linkedListPF.expectedErrorResult());
+		Assert.assertEquals("An unexpected error occurred:", linkedListPF.handleAlert1(), linkedListPF.expectederrorResult());
 
 	}
 
 	@When("The user write the invalid name code in Editor and click the Run Button for Introduction page")
 	public void the_user_write_the_invalid_name_code_in_editor_and_click_the_run_button_for_introduction_page() {
 	    
-		linkedListPF.nameinput();
+		linkedListPF.input();
 		linkedListPF.runBtn();
 	}
 
@@ -121,21 +120,21 @@ public class LinkedListSteps {
 	@When("The user write the invalid syntax_code in Editor and click the Run Button")
 	public void the_user_write_the_invalid_syntax_code_in_editor_and_click_the_run_button() {
 	    
-		linkedListPF.syntaxinput();
+		linkedListPF.input1();
 		linkedListPF.runBtn();
 	}
 
 	@Then("The user should able to see a syntaxerror msg in alert window")
 	public void the_user_should_able_to_see_a_syntaxerror_msg_in_alert_window() {
-		
-		Assert.assertEquals("An unexpected error occurred:",linkedListPF.syntaxHandleAlert(),
+	    
+		Assert.assertEquals("An unexpected error occurred:", linkedListPF.syntaxHandleAlert(),
 				linkedListPF.expectedSyntaxErrorResult());
 	}
 
 	@When("The user write the validcode in Editor and click the Run Button")
 	public void the_user_write_the_validcode_in_editor_and_click_the_run_button() {
 	    
-		linkedListPF.validinput();
+		linkedListPF.input2();
 		linkedListPF.runBtn();
 
 	}

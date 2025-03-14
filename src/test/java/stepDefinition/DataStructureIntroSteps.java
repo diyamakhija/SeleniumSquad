@@ -111,7 +111,7 @@ public class DataStructureIntroSteps {
 	@When("The user write the invalid namecode in Editor and click the Run Button")
 	public void the_user_write_the_invalid_namecode_in_editor_and_click_the_run_button() {
 
-		dataStructureIntroPF.nameinput();
+		dataStructureIntroPF.input();
 		dataStructureIntroPF.runBtn();
 
 	}
@@ -127,7 +127,7 @@ public class DataStructureIntroSteps {
 	@When("The user write the invalid syntaxcode in Editor and click the Run Button")
 	public void the_user_write_the_invalid_syntaxcode_in_editor_and_click_the_run_button() {
 
-		dataStructureIntroPF.syntaxinput();
+		dataStructureIntroPF.input1();
 		dataStructureIntroPF.runBtn();
 	}
 
@@ -142,7 +142,7 @@ public class DataStructureIntroSteps {
 	@When("The user write the valid code in Editor and click the Run Button")
 	public void the_user_write_the_valid_code_in_editor_and_click_the_run_button() {
 
-		dataStructureIntroPF.validinput();
+		dataStructureIntroPF.input2();
 		dataStructureIntroPF.runBtn();
 
 	}

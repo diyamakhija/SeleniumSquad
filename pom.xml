@@ -7,21 +7,24 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.5.2</version>
-				<configuration>
-					<suiteXmlFiles>
+	<plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.2</version>
+        <configuration>
+          <suiteXmlFiles>
+          
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+           <!-- <suiteXmlFile>testngcrossbrowser.xml</suiteXmlFile> -->
 
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-						<!-- <suiteXmlFile>testngcrossbrowser.xml</suiteXmlFile> -->
-
-					</suiteXmlFiles>
-				</configuration>
-			</plugin>
-		</plugins>
+          </suiteXmlFiles>
+        </configuration>
+        
+      </plugin>
+    
+</plugins>
 	</build>
 	<dependencies>
 		<!--
@@ -123,14 +126,15 @@
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>7.21.0</version>
 		</dependency>
-
+		
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-core</artifactId>
-			<version>7.21.1</version>
-		</dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-core</artifactId>
+    <version>7.21.1</version>
+</dependency>
 
+        
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
@@ -139,21 +143,11 @@
 			<version>5.1.2</version>
 		</dependency>
 
-		<!-- maven dependency for integration with cucumber with extent report
-		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
-		<dependency>
-			<groupId>tech.grasshopper</groupId>
-			<artifactId>extentreports-cucumber7-adapter</artifactId>
-			<version>1.7.0</version>
-
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.13.0</version> <!-- Choose a version that matches your
-			project -->
-		</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.13.0</version> <!-- Choose a version that matches your project -->
+</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
