@@ -108,7 +108,7 @@ public class QueueSteps {
 	@When("The user write the invalid name code in Editor and click the Run Button")
 	public void the_user_write_the_invalid_name_code_in_editor_and_click_the_run_button() {
 
-		queuePF.nameinput();	
+		queuePF.input();
 		queuePF.runBtn();
 
 	}
@@ -124,7 +124,7 @@ public class QueueSteps {
 	@When("The user write the invalid syntax code in Editor and click the Run Button")
 	public void the_user_write_the_invalid_syntax_code_in_editor_and_click_the_run_button() {
 
-		queuePF.syntaxinput();
+		queuePF.input1();
 		queuePF.runBtn();
 	}
 
@@ -139,7 +139,7 @@ public class QueueSteps {
 	@When("The user write the valid code in Editor and click the {string} Button")
 	public void the_user_write_the_valid_code_in_editor_and_click_the_button(String string) {
 
-		queuePF.validinput();
+		queuePF.input2();
 		queuePF.runBtn();
 
 	}
