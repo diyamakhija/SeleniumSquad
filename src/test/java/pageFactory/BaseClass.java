@@ -16,14 +16,12 @@ public class BaseClass {
 	protected WebDriver driver;
 
 	public BaseClass() {
+		
 		this.driver = DriverFactory.getDriver(); // Initialize driver
 		PageFactory.initElements(driver, this);
 
-		// **Changed**: Using Duration for implicit wait
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Implicit wait
+ 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Implicit wait
 
-		// **Changed**: Correct WebDriverWait constructor usage
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Explicit wait constructor updated
 	}
 
 	public WebDriver getDriver() {
