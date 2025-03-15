@@ -1,4 +1,4 @@
- @LP
+@LP
 Feature: Login Feature
 
   @tag1
@@ -25,6 +25,4 @@ Feature: Login Feature
       Given  The user is on the DSAlgo Signin Page
       When  The user clicks login button afterentering valid username and valid password
       Then  The user should land in DataStructure Home Page with message "You are logged in"
-      
-
- 
+     

@@ -1,10 +1,43 @@
 package stepDefinition;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageFactory.LoginPagePF;
+import pageFactory.RegistrationPF;
+import utilities.LoggerLoad;
 
 public class Registration {
+	
+	RegistrationPF registration = new RegistrationPF();
+	LoggerLoad loggerLoad = new LoggerLoad();
+	
+	@Given("The user is on DS Algo Home Page")
+	public void the_user_is_on_ds_algo_home_page() {
+		LoggerLoad.info("The user is on the DS Algo Home Page");
+		registration.pageURL();
+		registration.getStartedBtn();
+	}
+	
+	@When("The user should click the Registration link")
+	public void the_user_should_click_the_registration_link() {
+	    registration.getregisterBtn();
+	}
+	
+	@Then("The user should be redirected to Registration page")
+	public void the_user_should_be_redirected_to_registration_page() {
+		Assert.assertEquals("User is not on the Dashboard Page",registration.expectedUrl66(), registration.getCurrentUrl());
+	}
+	
+	
+	
+	
+	
+	
+	
+
 	@Given("the user is on the user registration page")
 	public void the_user_is_on_the_user_registration_page() {
 	   
@@ -30,8 +63,8 @@ public class Registration {
 	    
 	}
 
-	@When("the user clicks the Register button after entering a username with spacebar characters or other than digits and @\\/.\\/+\\/-\\/_")
-	public void the_user_clicks_the_register_button_after_entering_a_username_with_spacebar_characters_or_other_than_digits_and() {
+	@When("the user clicks the Register button after entering a username with spacebar characters or other than digits")
+	public void the_user_clicks_the_register_button_after_entering_a_username_with_spacebar_characters_or_other_than_digits() {
 	    
 	}
 
@@ -89,8 +122,5 @@ public class Registration {
 	public void the_user_clicks_the_register_button_after_entering_a_valid_username_password_and_password_confirmation() {
 	    
 	}
-
-
-
 
 }
