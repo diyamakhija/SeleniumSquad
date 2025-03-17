@@ -105,6 +105,7 @@ public class Stack {
 		Assert.assertEquals("An unexpected error occurred:", stackPF.handleAlert1(), stackPF.expectederrorResult());
 
 	}
+	
 	@Given("The user is in the tryEditor page of Implementation of Stack in Python")
 	public void the_user_is_in_the_try_editor_page_of_implementation_of_stack_in_python() {
 	   
@@ -145,11 +146,6 @@ public class Stack {
 	public void the_user_should_see_a_name_error_message_in_an_alert_window() {
 	    
 	}
-	   
-	
-	
-	
-	
-	
-	
+	  
+
 }

@@ -1,5 +1,5 @@
 @tag
-Feature: DS Algo Portal
+Feature: Landing Page
 
   @tag1
   Scenario: Verify that user is able to navigate to "Tree" data structure page

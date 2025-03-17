@@ -1,4 +1,4 @@
-Feature: Graph Module Navigation and Functionality
+Feature: Graph Feature
 
   Background:
     Given The user is signed in to DSAlgo Portal

@@ -1,5 +1,5 @@
 @home
-Feature: home page
+Feature: Home page
 
   Background: 
     Given The user is on the Home page

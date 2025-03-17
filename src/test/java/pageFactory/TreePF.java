@@ -1,12 +1,17 @@
 package pageFactory;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import utilities.ExcelSheetReader;
 
 public class TreePF extends BaseClass {
 
-    // ✅ Tree "Get Started" Button
+    
     @FindBy(xpath = "//a[@href='tree']")
     public WebElement treeGetStartedBtn;
 
@@ -14,69 +19,96 @@ public class TreePF extends BaseClass {
     @FindBy(xpath = "//a[contains(@href, 'overview-of-trees')]")
    public WebElement overviewOfTreesBtn;
   
-    // ✅ Try Here Button
+   
     @FindBy(xpath = "//a[text()='Try here>>>']")
     public WebElement tryHereBtn;
 
-    // ✅ Code Editor
+    
     @FindBy(xpath = "//textarea[@tabindex='0']")
     public WebElement input;
 
     @FindBy(xpath = "//form/div/div/div/textarea")
     public WebElement editorInput;
+    
+    @FindBy(xpath = "//form[@id='answer_form']")
+	public WebElement form;
 
-    // ✅ Output Console
+    
     @FindBy(xpath = "//pre[@id='output']")
     public WebElement output;
 
-    // ✅ Run Button
+    
     @FindBy(xpath = "//button[@type='button']")
     public WebElement runBtn;
 
-    // ✅ Tree Terminology
+   
     @FindBy(xpath = "//a[contains(@href, 'terminologies')]")
     public WebElement terminologyBtn;
 
-    // ✅ Types of Trees
+    
     @FindBy(xpath = "//a[contains(@href, 'types-of-tree')]")
     public WebElement typesOfTreesBtn;
 
-    // ✅ Tree Traversals
+    
     @FindBy(xpath = "//a[text()='Tree Traversals']")
     public WebElement treeTraversalsBtn;
 
-    // ✅ Practice Questions
+    
     @FindBy(xpath = "//a[text()='Practice Questions']")
     public WebElement practiceQuestionsBtn;
 
-    // ✅ Dropdown Menu
+    
     @FindBy(xpath = "//div[@class='nav-item dropdown']/a")
     public WebElement dropDownBtn;
 
-    // ✅ Queue Option in Dropdown
+    
     @FindBy(xpath = "//div[@class='nav-item dropdown show']/div/a[4]")
     public WebElement queueOption;
 
-    // ✅ Numpy Ninja Button
+    
     @FindBy(xpath = "//div[@class='bs-example']/nav/a")
     public WebElement numpyNinjaBtn;
 
-    // ✅ Click Tree Get Started
+    
     public void clickTreeGetStarted() {
         treeGetStartedBtn.click();
     }
 
-    // ✅ Click Overview of Trees
+    
     public void clickOverviewOfTrees() {
         overviewOfTreesBtn.click();
     }
 
-    // ✅ Click Try Here
+    
     public void clickTryHere() {
         tryHereBtn.click();
     }
 
-    // ✅ Enter Python Code
+    
+    public void nameinput() {
+		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		webDriverWait.until(ExpectedConditions.visibilityOf(form));
+		form.click();
+		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));		
+		
+	}
+
+	public void syntaxinput() {
+
+		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		webDriverWait.until(ExpectedConditions.visibilityOf(form));
+		form.click();
+		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
+	}
+
+	public void validinput() {
+
+		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		webDriverWait.until(ExpectedConditions.visibilityOf(form));
+		form.click();
+		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
+	}
+    
     public void enterPythonCode() {
         input.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
     }
@@ -89,47 +121,47 @@ public class TreePF extends BaseClass {
         input.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
     }
 
-    // ✅ Click Run
+    
     public void clickRun() {
         runBtn.click();
     }
 
-    // ✅ Click Terminology
+    
     public void clickTerminology() {
         terminologyBtn.click();
     }
 
-    // ✅ Click Types of Trees
+    
     public void clickTypesOfTrees() {
         typesOfTreesBtn.click();
     }
 
-    // ✅ Click Tree Traversals
+   
     public void clickTreeTraversals() {
         treeTraversalsBtn.click();
     }
 
-    // ✅ Click Practice Questions
+    
     public void clickPracticeQuestions() {
         practiceQuestionsBtn.click();
     }
 
-    // ✅ Click Dropdown
+    
     public void clickDropDown() {
         dropDownBtn.click();
     }
 
-    // ✅ Click Queue Option
+    
     public void clickQueueOption() {
         queueOption.click();
     }
 
-    // ✅ Click Numpy Ninja
+    
     public void clickNumpyNinja() {
         numpyNinjaBtn.click();
     }
 
-    // ✅ Handle Alerts
+    
     public String handleAlert1() {
         return handleAlert1();
     }
@@ -142,7 +174,7 @@ public class TreePF extends BaseClass {
         return handleAlert1();
     }
 
-    // ✅ Expected Error Messages
+   
     public String getExpectedNameError() {
         return ExcelSheetReader.pythonCodeData(2).get(1);
     }
@@ -155,7 +187,7 @@ public class TreePF extends BaseClass {
         return ExcelSheetReader.pythonCodeData(4).get(1);
     }
 
-    // ✅ Expected URLs
+    
     public String getExpectedUr43() {
         return ExcelSheetReader.expectedUrl(43).get(0);
     }
