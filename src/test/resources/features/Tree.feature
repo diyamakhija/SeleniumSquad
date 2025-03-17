@@ -66,7 +66,9 @@ Feature: Tree feature
   @tag11InvalidCodeExecution
   Scenario: Verify that the user receives a Error when executing invalid Python code
     Given The user is on the "Try Editor" page from the "Terminologies" page
+
     When The user enters invalid Python code causing a NameError and clicks the Run button
+
     Then The user should able to see a name error message in alert window
     
   @tag12SyntaxErrorExecution
