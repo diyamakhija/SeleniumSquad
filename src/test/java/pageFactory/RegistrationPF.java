@@ -17,8 +17,19 @@ public class RegistrationPF extends BaseClass {
 	
 	@FindBy(xpath = "//a[contains(text(),'Register')]")
 	public WebElement registerBtn;
+	
+	@FindBy(xpath = "//input[@name='username']")
+	public WebElement UserNameFld;
+	
+	@FindBy(xpath = "//input[@name='password1']")
+	public WebElement PssWordFld;
 
+	@FindBy(xpath = "//input[@name='password2']")
+	public WebElement ConPssWordFld;
 
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	public WebElement actualMessage;
+	
     public void getStartedBtn() {
     getStartedBtn.click();
 	
@@ -42,4 +53,21 @@ public class RegistrationPF extends BaseClass {
 
 		return ExcelSheetReader.expectedUrl(66).get(0);
 	}
-}
+    
+    public void userNameFld() {
+    	UserNameFld.sendKeys("usrName");
+	}
+    
+    public void pssWordFld() {
+    	PssWordFld.sendKeys("pssword");
+    }	
+    public void ConpssWordFld() {
+    	ConPssWordFld.sendKeys("pwdConfirmation");
+    }
+    
+    public void ActualMessage() {
+    	actualMessage.getText();
+    }
+    
+   
+	}

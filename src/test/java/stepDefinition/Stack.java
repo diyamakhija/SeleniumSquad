@@ -118,8 +118,59 @@ public class Stack {
 		Assert.assertEquals("An unexpected error occurred:", stackPF.handleAlert1(), stackPF.expectederrorResult());
 
 	}
+	@Given("the user signs in to dsAlgo Portal")
+	public void the_user_signs_in_to_ds_algo_portal() {
+	    
+	}
+	@When("the user writes invalid code in the editor and clicks the Run Button on the {string} page")
+	public void the_user_writes_invalid_code_in_the_editor_and_clicks_the_run_button_on_the_page(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Then("the user should see a name error message in an alert window")
+	public void the_user_should_see_a_name_error_message_in_an_alert_window() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
 	
-	
-	
+
+	@Given("the user signs to dsAlgo Portal")
+	public void the_user_signs_to_ds_algo_portal() {
+	   
+	}
+	@When("the user clicks the Run Button without entering any code in the editor on the {string} page")
+	public void the_user_clicks_the_run_button_without_entering_any_code_in_the_editor_on_the_page(String string) {
+	    
+	}
+	@Then("the user should see an error message in an alert window")
+	public void the_user_should_see_an_error_message_in_an_alert_window() {
+	    
+	}
+
+	@Given("The user is in the tryEditor page of Implementation of Stack in Python")
+	public void the_user_is_in_the_try_editor_page_of_implementation_of_stack_in_python() {
+	   
+	}
+	@When("The stack user write the valid code in Editor and click the {string} Button")
+	public void the_stack_user_write_the_valid_code_in_editor_and_click_the_button(String string) {
+	    
+	}
+	@Then("The stack user should able to {string} in the console")
+	public void the_stack_user_should_able_to_in_the_console(String string) {
+	    
+	}
+
+	@Given("The user is in the tryEditor page of Implementation of Stack  Python")
+	public void the_user_is_in_the_try_editor_page_of_implementation_of_stack_python() {
+	  
+	}
+	@When("The stack user write the invalid syntax code in Editor and click the Run Button")
+	public void the_stack_user_write_the_invalid_syntax_code_in_editor_and_click_the_run_button() {
+	   
+	}
+	@Then("The stack user should able to see a syntax error msg in alert window")
+	public void the_stack_user_should_able_to_see_a_syntax_error_msg_in_alert_window() {
+	    
+	}
 	
 }
