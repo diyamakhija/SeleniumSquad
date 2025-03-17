@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
     monochrome = false, // Console output color
-    tags = "@SF", // Tags from feature file
+    tags = "", // Tags from feature file
     features = { "src/test/resources/features" }, // Location of feature files
     glue = { "stepDefinition", "hooks" }, // Location of step definition files
     plugin = {
