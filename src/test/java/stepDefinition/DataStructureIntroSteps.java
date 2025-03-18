@@ -84,8 +84,8 @@ public class DataStructureIntroSteps {
 
 	}
 
-	@Given("The user is in the tryEditor page of Time Complexity")
-	public void the_user_is_in_the_try_editor_page_of_time_complexity() {
+	@Given("The user is on the Try Editor page of Time Complexity")
+	public void the_user_is_on_the_try_editor_page_of_time_complexity() {
 
 		dataStructureIntroPF.dataStrIntro_getStartedBtn();
 		dataStructureIntroPF.timeComplexityBtn();
@@ -100,58 +100,57 @@ public class DataStructureIntroSteps {
 		dataStructureIntroPF.runBtn();
 	}
 
-	@Then("The user should able to see  an error message in alert window")
-	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
-
-		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.handleAlert1(),
-				dataStructureIntroPF.expectedErrorResult());
-
-	}
-
-	@When("The user write the invalid namecode in Editor and click the Run Button")
-	public void the_user_write_the_invalid_namecode_in_editor_and_click_the_run_button() {
-
-		dataStructureIntroPF.nameinput();
-		dataStructureIntroPF.runBtn();
-
-	}
-
-	@Then("The user should able to see an name error message in alert window")
-	public void the_user_should_able_to_see_an_name_error_message_in_alert_window() {
-
+	@Then("The user should able to see  an error message in alert window based on {string} at row {int} and column {int}")
+	public void the_user_should_able_to_see_an_error_message_in_alert_window_based_on_at_row_and_column(String string, Integer int1, Integer int2) {
+	   
+	
 		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.nameHandleAlert(),
-				dataStructureIntroPF.expectedNameErrorResult());
+				dataStructureIntroPF.expectedResult(string, int1, int2));
 
 	}
+	
+	@When("The user writes the invalid name code in the Editor from {string} at row {int} and column {int}, then clicks the Run Button")
+	public void the_user_writes_the_invalid_name_code_in_the_editor_from_at_row_and_column_then_clicks_the_run_button(String string, Integer int1, Integer int2) {
 
-	@When("The user write the invalid syntaxcode in Editor and click the Run Button")
-	public void the_user_write_the_invalid_syntaxcode_in_editor_and_click_the_run_button() {
-
-		dataStructureIntroPF.syntaxinput();
-		dataStructureIntroPF.runBtn();
-	}
-
-	@Then("The user should able to see an syntax error message in alert window")
-	public void the_user_should_able_to_see_an_syntax_error_message_in_alert_window() {
-
-		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.syntaxHandleAlert(),
-				dataStructureIntroPF.expectedSyntaxErrorResult());
-
-	}
-
-	@When("The user write the valid code in Editor and click the Run Button")
-	public void the_user_write_the_valid_code_in_editor_and_click_the_run_button() {
-
-		dataStructureIntroPF.validinput();
+	    dataStructureIntroPF.codeEditorInput(string, int1, int2);
 		dataStructureIntroPF.runBtn();
 
 	}
 
-	@Then("The user should able to see output in the console")
-	public void the_user_should_able_to_see_output_in_the_console() {
+	@Then("The user should see a NameError message in the alert window based on {string} at row {int} and column {int}")
+	public void the_user_should_see_a_name_error_message_in_the_alert_window_based_on_at_row_and_column(String string, Integer int1, Integer int2) {
 
-		Assert.assertEquals(dataStructureIntroPF.validOutput(), dataStructureIntroPF.output.getText());
+	
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.nameHandleAlert(),
+				dataStructureIntroPF.expectedResult(string, int1, int2));
 
+	}
+	@When("The user write the invalid syntaxcode in Editor from {string} at row {int} and column {int}, then clicks the Run Button")
+	public void the_user_write_the_invalid_syntaxcode_in_editor_from_at_row_and_column_then_clicks_the_run_button(String string, Integer int1, Integer int2) {
+
+		dataStructureIntroPF.codeEditorInput(string, int1, int2);
+		dataStructureIntroPF.runBtn();
+	}
+
+	@Then("The user should able to see an syntax error message in alert window based on {string} at row {int} and column {int}")
+	public void the_user_should_able_to_see_an_syntax_error_message_in_alert_windowbased_on_at_row_and_column(String string, Integer int1, Integer int2) {
+	  
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.nameHandleAlert(),
+				dataStructureIntroPF.expectedResult(string, int1, int2));
+	}
+
+	@When("The user write the valid code in Editorfrom {string} at row {int} and column {int}, then clicks the Run Button")
+	public void the_user_write_the_valid_code_in_editorfrom_at_row_and_column_then_clicks_the_run_button(String string, Integer int1, Integer int2) {
+
+		dataStructureIntroPF.codeEditorInput(string, int1, int2);
+		dataStructureIntroPF.runBtn();
+
+	}
+
+	@Then("The user should able to see output in the console based on {string} at row {int} and column {int}")
+	public void the_user_should_able_to_see_output_in_the_console_based_on_at_row_and_column(String string, Integer int1, Integer int2) {
+	  
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.expectedResult(string, int1, int2),dataStructureIntroPF.output.getText());
 	}
 
 	@Given("The user is in the Time Complexity page")
