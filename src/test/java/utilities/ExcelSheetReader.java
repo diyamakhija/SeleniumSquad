@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Assert;
 
 public class ExcelSheetReader {
 
@@ -88,12 +89,23 @@ public class ExcelSheetReader {
 		}
 	}
 
+	public static String getExcelSheetData(String sheetName, Integer rowNumber, Integer InputCol) {
+	String	Input = getExcelSheets().get(sheetName).get(rowNumber).get(InputCol);
+	return Input;
+
+	}
+	
+	public static String getExcelSheetData1(String sheetName, Integer rowNumber, Integer expectedCol ) {
+		return getExcelSheets().get(sheetName).get(rowNumber).get(expectedCol);
+
+	}
+
 	public static List<String> userCredential(int row) {
 
 		return getExcelSheets().get("userCredentials").get(row);
 
 	}
-
+	
 	public static List<String> pythonCodeData(int row) {
 		return getExcelSheets().get("pythonCode").get(row);
 

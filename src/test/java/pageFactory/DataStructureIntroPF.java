@@ -61,25 +61,11 @@ public class DataStructureIntroPF extends BaseClass {
 
 	}
 
-	public void nameinput() {
+	public void codeEditorInput(String sheetName, Integer rowNumber, Integer InputCol) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
-	}
-
-	public void syntaxinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
-	}
-
-	public void validinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber, InputCol));
 	}
 
 	public void output() {
@@ -131,24 +117,18 @@ public class DataStructureIntroPF extends BaseClass {
 		 String syntaxHandleAlert = handleAlert();
 		 return syntaxHandleAlert;
 	}
+	
+	public String expectedResult(String sheetName, Integer RowNumber, Integer expectedCol) {
 
-	public String expectedNameErrorResult() {
-
-		String  expectedNameErrorResult=ExcelSheetReader.pythonCodeData(2).get(1);
-		return expectedNameErrorResult;
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData1(sheetName, RowNumber, expectedCol);
+		return expectedErrorResult;
 
 	}
 
-	public String expectedSyntaxErrorResult() {
+	public String expectedUrl(String sheetName, Integer RowNumber, Integer expectedCol) {
 
-		 String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3).get(1);
-		 return expectedSyntaxErrorResult ;
-	}
-
-	public String expectedErrorResult() {
-
-		String expectederrorResult = ExcelSheetReader.pythonCodeData(4).get(1);
-		 return expectederrorResult;
+		String  expectedUrl=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, expectedCol);
+		return expectedUrl;
 
 	}
 
@@ -178,12 +158,6 @@ public class DataStructureIntroPF extends BaseClass {
 	public String expectedUrl7() {
 
 		return ExcelSheetReader.expectedUrl(7).get(0);
-
-	}
-
-	public String validOutput() {
-
-		return ExcelSheetReader.pythonCodeData(1).get(1);
 
 	}
 
