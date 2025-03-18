@@ -1,3 +1,4 @@
+@graph
 Feature: Graph Feature
 
   Background:
@@ -8,10 +9,6 @@ Feature: Graph Feature
     When The user clicks the "Get Started" button in Graph Panel
     Then The user should be directed to "Graph" Data Structure Page
 
-  Scenario: Verify that user is able to navigate to "Graph" page
-    Given The user is on the "Graph" page after Sign in
-    When The user clicks "Graph" button
-    Then The user should be redirected to "Graph" page
 
   Scenario: Verify that user is able to navigate to "Try Editor" page for "Graph" page
     Given The user is on the "Graph" page
@@ -33,13 +30,7 @@ Feature: Graph Feature
     When The user writes valid Python code in the Editor and clicks the Run Button
     Then The user should see the output in the console
     
-    
-
-  Scenario: Verify that user is able to navigate to "Graph Representations" page
-    Given The user is on the "Graph" page after Sign in
-    When The user clicks "Graph Representations" button
-    Then The user should be redirected to "Graph Representations" page
-
+   
   Scenario: Verify that user is able to navigate to "Try Editor" page for "Graph Representations" page
     Given The user is on the "Graph Representations" page
     When The user clicks "Try Here" button in Graph Representations page

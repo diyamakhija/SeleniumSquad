@@ -25,7 +25,7 @@
 
 	</test> <!-- Test -->
 
-	<!--<test thread-count="3"  name="Testedge">
+	<test thread-count="3"  name="Testedge">
 
 		<parameter name="browser" value="edge" />
 
@@ -35,7 +35,7 @@
 
 		</classes>
 
-	</test> <!- Test -->
+	</test> 
 	
 	<!--<test thread-count="3"  name="Testsafari">
 
