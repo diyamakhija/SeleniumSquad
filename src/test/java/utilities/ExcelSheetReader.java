@@ -12,15 +12,20 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Assert;
 
 public class ExcelSheetReader {
 
+	public static void main(String[] args) {
+
+		System.out.println(
+				getData("./src/test/resources/testData/excelData.xlsx").get("expectedUrl"));
+	}
+
 	// creates new instance of the HashMap class and given to the variable
 	// Map is a data structure that stores key-value pairs.
-	private static Map<String, List<List<String>>> excelData = new HashMap<>();
+	private static Map<String, List<Map<String, String>>> excelData = new HashMap<>();
 
-	public static Map<String, List<List<String>>> getData(String filePath) {
+	public static Map<String, List<Map<String, String>>> getData(String filePath) {
 
 		// A "for-each loop" (also known as an "enhanced for loop") is a concise way to
 		// iterate over elements in a collection (like an array, List, Set, or Map) in
@@ -40,19 +45,30 @@ public class ExcelSheetReader {
 
 				// Iterate through all sheets
 				for (Sheet sheet : workbook) {
-					List<List<String>> rows = new ArrayList<>();
+					Row firstRow = sheet.getRow(0);
+					List<Map<String, String>> rows = new ArrayList<>();
 
 					// Iterate through all rows
 					for (Row row : sheet) {
-						List<String> rowData = new ArrayList<>();
+						if (row.getRowNum() != 0) {
+							boolean isRowPresent = false;
+							Map<String, String> rowData = new HashMap<>();
 
-						// Iterate through all cells in a row
-						for (Cell cell : row) {
-							rowData.add(getCellValue(cell));
+							// Iterate through all cells in a row
+							for (Cell cell : row) {
+								Cell header = firstRow.getCell(cell.getColumnIndex());
+								String cellValue = getCellValue(cell).trim();
+								if (header != null && !cellValue.isEmpty() && !cellValue.isBlank()) {
+									isRowPresent = true;
+									rowData.put(getCellValue(header), cellValue);
+								}
+							}
+
+							if (isRowPresent) {
+								// adds up every single row of data
+								rows.add(rowData);
+							}
 						}
-
-						// adds up every single row of data
-						rows.add(rowData);
 					}
 
 					// put() This is the method used to add a new key-value pair to a Map
@@ -68,7 +84,7 @@ public class ExcelSheetReader {
 		return excelData;
 	}
 
-	public static Map<String, List<List<String>>> getExcelSheets() {
+	public static Map<String, List<Map<String, String>>> getExcelSheets() {
 		return excelData;
 	}
 
@@ -89,31 +105,25 @@ public class ExcelSheetReader {
 		}
 	}
 
-	public static String getExcelSheetData(String sheetName, Integer rowNumber, Integer InputCol) {
-	String	Input = getExcelSheets().get(sheetName).get(rowNumber).get(InputCol);
-	return Input;
-
-	}
-	
-	public static String getExcelSheetData1(String sheetName, Integer rowNumber, Integer expectedCol ) {
-		return getExcelSheets().get(sheetName).get(rowNumber).get(expectedCol);
+	public static String getExcelSheetData(String sheetName, Integer rowNumber, String colName) {
+		return getExcelSheets().get(sheetName).get(rowNumber).get(colName);
 
 	}
 
-	public static List<String> userCredential(int row) {
+	public static String userCredential(String sheetName, Integer rowNumber, String colName) {
 
-		return getExcelSheets().get("userCredentials").get(row);
-
-	}
-	
-	public static List<String> pythonCodeData(int row) {
-		return getExcelSheets().get("pythonCode").get(row);
+		return getExcelSheets().get(sheetName).get(rowNumber).get(colName);
 
 	}
 
-	public static List<String> expectedUrl(int row) {
+	public static String pythonCodeData(int row) {
+		return getExcelSheets().get("pythonCode").get(row).get("Results");
 
-		return getExcelSheets().get("expectedUrl").get(row);
+	}
+
+	public static String expectedUrl(int row) {
+
+		return getExcelSheets().get("expectedUrl").get(row).get("expectedUrls");
 
 	}
 

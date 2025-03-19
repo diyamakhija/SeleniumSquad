@@ -40,7 +40,7 @@ public class DataStructureIntroPF extends BaseClass {
 	public WebElement dropDownBtn;
 
 	@FindBy(xpath = "//div[@class='nav-item dropdown show']/div/a[4]")
-	public WebElement queueOption;
+	public WebElement queue;
 
 	@FindBy(xpath = "//div[@class='bs-example']/nav/a")
 	public WebElement numpyNinjaBtn;
@@ -61,11 +61,11 @@ public class DataStructureIntroPF extends BaseClass {
 
 	}
 
-	public void codeEditorInput(String sheetName, Integer rowNumber, Integer InputCol) {
+	public void codeEditorInput(String sheetName, Integer rowNumber,String header) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber, InputCol));
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,header));
 	}
 
 	public void output() {
@@ -88,9 +88,9 @@ public class DataStructureIntroPF extends BaseClass {
 		dropDownBtn.click();
 	}
 
-	public void queueOption() {
+	public void queue() {
 
-		queueOption.click();
+		queue.click();
 	}
 
 	public void numpyNinjaBtn() {
@@ -118,14 +118,14 @@ public class DataStructureIntroPF extends BaseClass {
 		 return syntaxHandleAlert;
 	}
 	
-	public String expectedResult(String sheetName, Integer RowNumber, Integer expectedCol) {
+	public String expectedResult(String sheetName, Integer RowNumber, String header) {
 
-		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData1(sheetName, RowNumber, expectedCol);
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, header);
 		return expectedErrorResult;
 
 	}
 
-	public String expectedUrl(String sheetName, Integer RowNumber, Integer expectedCol) {
+	public String expectedUrl(String sheetName, Integer RowNumber, String expectedCol) {
 
 		String  expectedUrl=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, expectedCol);
 		return expectedUrl;
@@ -134,36 +134,37 @@ public class DataStructureIntroPF extends BaseClass {
 
 	public String expectedUrl0() {
 
-		return ExcelSheetReader.expectedUrl(0).get(0);
+		return ExcelSheetReader.expectedUrl(0);
 
+	}
+
+	public String expectedUrl2() {
+
+		return ExcelSheetReader.expectedUrl(2);
 	}
 
 	public String expectedUrl3() {
 
-		return ExcelSheetReader.expectedUrl(3).get(0);
+		System.out.println( ExcelSheetReader.expectedUrl(3));
+		return ExcelSheetReader.expectedUrl(3);
+
+	}
+
+	public String expectedUrl4() {
+
+		return ExcelSheetReader.expectedUrl(4);
+
 	}
 
 	public String expectedUrl5() {
 
-		return ExcelSheetReader.expectedUrl(5).get(0);
+		return ExcelSheetReader.expectedUrl(5);
 
 	}
 
-	public String expectedUrl6() {
+	public String expectedUrl30() {
 
-		return ExcelSheetReader.expectedUrl(6).get(0);
-
-	}
-
-	public String expectedUrl7() {
-
-		return ExcelSheetReader.expectedUrl(7).get(0);
-
-	}
-
-	public String expectedUrl36() {
-
-		return ExcelSheetReader.expectedUrl(36).get(0);
+		return ExcelSheetReader.expectedUrl(30);
 
 	}
 
