@@ -61,11 +61,19 @@ public class DataStructureIntroPF extends BaseClass {
 
 	}
 
+<<<<<<< Updated upstream
 	public void codeEditorInput(String sheetName, Integer rowNumber, Integer InputCol) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
 		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber, InputCol));
+=======
+	public void codeEditorInput(String sheetName, Integer rowNumber) {
+		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		webDriverWait.until(ExpectedConditions.visibilityOf(form));
+		form.click();
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,"pCode"));
+>>>>>>> Stashed changes
 	}
 
 	public void output() {
@@ -118,6 +126,7 @@ public class DataStructureIntroPF extends BaseClass {
 		 return syntaxHandleAlert;
 	}
 	
+<<<<<<< Updated upstream
 	public String expectedResult(String sheetName, Integer RowNumber, Integer expectedCol) {
 
 		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData1(sheetName, RowNumber, expectedCol);
@@ -167,4 +176,15 @@ public class DataStructureIntroPF extends BaseClass {
 
 	}
 
+=======
+	public String expectedResult(String sheetName, Integer RowNumber) {
+
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
+		return expectedErrorResult;
+
+	}
+>>>>>>> Stashed changes
 }
+
+
+

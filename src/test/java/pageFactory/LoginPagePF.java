@@ -73,6 +73,7 @@ public class LoginPagePF extends BaseClass {
 		pageURL(ConfigReader.getPageURL());
 	}
 	
+<<<<<<< Updated upstream
 	public String expectedUrl64() {
 
 		return ExcelSheetReader.expectedUrl(64).get(0);
@@ -85,9 +86,12 @@ public class LoginPagePF extends BaseClass {
 //    }
 	
 	 @FindBy(xpath = "//div[@class='alert alert-success']") // Adjust XPath based on actual UI
+=======
+	 @FindBy(xpath = "//div[@class='alert alert-success']") 
+>>>>>>> Stashed changes
 	    public WebElement successMessage;
 	
-	 @FindBy(xpath = "//div[@role='alert']") // Locator for error message
+	 @FindBy(xpath = "//div[@role='alert']") 
 	    public WebElement errorMessage;
 	
 	 public String getErrorMsg() {

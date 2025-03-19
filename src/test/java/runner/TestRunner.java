@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
     monochrome = false, // Console output color
-    tags = "", // Tags from feature file
+    tags = "@DS", // Tags from feature file
     features = { "src/test/resources/features" }, // Location of feature files
     glue = { "stepDefinition", "hooks" }, // Location of step definition files
     plugin = {
@@ -18,7 +18,8 @@ import io.cucumber.testng.CucumberOptions;
         "junit:target/cucumber.xml",  // Generates JUnit XML report
         "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
     },
-    dryRun = false // Set to true to check missing step definitions
+    dryRun = false
+    // Set to true to check missing step definitions
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {

@@ -60,10 +60,16 @@ Feature: DataStructureIntro feature
     Then The user should able to see output in the console based on "<SheetName>" at row <RowNumber> and column <expectedCol>
     
     Examples: 
+<<<<<<< Updated upstream
       | SheetName  | RowNumber | InputCol | expectedCol |
       |pythonCode  |    1      | 0        | 1           |
      
     
+=======
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
+         
+>>>>>>> Stashed changes
     @tag8
   Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is in the Time Complexity page

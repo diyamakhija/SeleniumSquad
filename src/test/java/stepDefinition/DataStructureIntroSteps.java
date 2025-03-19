@@ -8,7 +8,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactory.DataStructureIntroPF;
 import pageFactory.LoginPagePF;
+<<<<<<< Updated upstream
 import utilities.ExcelSheetReader;
+=======
+import urlConstants.UrlConstants;
+>>>>>>> Stashed changes
 import utilities.LoggerLoad;
 
 public class DataStructureIntroSteps {
@@ -32,7 +36,11 @@ public class DataStructureIntroSteps {
 	@Then("The user should land in Data Structures- Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
 
+<<<<<<< Updated upstream
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl5(),
+=======
+		Assert.assertEquals("User is not on the Dashboard Page",UrlConstants.DATA_STRUCTURES_INRO_URL,
+>>>>>>> Stashed changes
 
 				dataStructureIntroPF.getCurrentUrl());
 
@@ -56,7 +64,11 @@ public class DataStructureIntroSteps {
 	@Then("The user should be redirected to Time Complexity of Data structures-Introduction")
 	public void the_user_should_be_redirected_to_time_complexity_of_data_structures_introduction() {
 
+<<<<<<< Updated upstream
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl6(),
+=======
+		Assert.assertEquals("User is not on the Dashboard Page",UrlConstants.DATA_STRUCTURES_INTRO_TIME_COMPLEXITY_URL,
+>>>>>>> Stashed changes
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -79,7 +91,11 @@ public class DataStructureIntroSteps {
 	@Then("The user should be redirected to a page having an try Editor with a Run button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
 
+<<<<<<< Updated upstream
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl3(),
+=======
+		Assert.assertEquals("User is not on the Dashboard Page",UrlConstants.TRYEDITOR_URL,
+>>>>>>> Stashed changes
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -100,6 +116,7 @@ public class DataStructureIntroSteps {
 		dataStructureIntroPF.runBtn();
 	}
 
+<<<<<<< Updated upstream
 	@Then("The user should able to see  an error message in alert window based on {string} at row {int} and column {int}")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window_based_on_at_row_and_column(String string, Integer int1, Integer int2) {
 	   
@@ -113,10 +130,25 @@ public class DataStructureIntroSteps {
 	public void the_user_writes_the_invalid_name_code_in_the_editor_from_at_row_and_column_then_clicks_the_run_button(String string, Integer int1, Integer int2) {
 
 	    dataStructureIntroPF.codeEditorInput(string, int1, int2);
+=======
+	@Then("The user should able to see  an error message in alert window based on {string} at row {int}")
+	public void the_user_should_able_to_see_an_error_message_in_alert_window_based_on_at_row(String sheetName, Integer rowNumber) {
+	  	  
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.handleAlert1(),
+				dataStructureIntroPF.expectedResult(sheetName, rowNumber));
+
+	}
+	
+	@When("The user writes the invalid name code in the Editor from {string} at row {int} , then clicks the Run Button")
+	public void the_user_writes_the_invalid_name_code_in_the_editor_from_at_row_and_column_then_clicks_the_run_button(String sheetName, Integer rowNumber) {
+
+	    dataStructureIntroPF.codeEditorInput(sheetName, rowNumber);
+>>>>>>> Stashed changes
 		dataStructureIntroPF.runBtn();
 
 	}
 
+<<<<<<< Updated upstream
 	@Then("The user should see a NameError message in the alert window based on {string} at row {int} and column {int}")
 	public void the_user_should_see_a_name_error_message_in_the_alert_window_based_on_at_row_and_column(String string, Integer int1, Integer int2) {
 
@@ -143,14 +175,48 @@ public class DataStructureIntroSteps {
 	public void the_user_write_the_valid_code_in_editorfrom_at_row_and_column_then_clicks_the_run_button(String string, Integer int1, Integer int2) {
 
 		dataStructureIntroPF.codeEditorInput(string, int1, int2);
+=======
+	@Then("The user should see a NameError message in the alert window based on {string} at row {int}")
+	public void the_user_should_see_a_name_error_message_in_the_alert_window_based_on_at_row(String sheetName, Integer rowNumber) {
+	
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.nameHandleAlert(),
+				dataStructureIntroPF.expectedResult(sheetName,rowNumber));
+
+	}
+	@When("The user write the invalid syntaxcode in Editor from {string} at row {int} , then clicks the Run Button")
+	public void the_user_write_the_invalid_syntaxcode_in_editor_from_at_row_and_column_then_clicks_the_run_button(String sheetName, Integer rowNumber) {
+
+		dataStructureIntroPF.codeEditorInput(sheetName, rowNumber);
+		dataStructureIntroPF.runBtn();
+	}
+
+	@Then("The user should able to see an syntax error message in alert window based on {string} at row {int}")
+	public void the_user_should_able_to_see_an_syntax_error_message_in_alert_windowbased_on_at_row_and_column(String sheetName, Integer rowNumber) {
+	  
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.syntaxHandleAlert(),
+				dataStructureIntroPF.expectedResult(sheetName,rowNumber));
+	}
+
+	@When("The user write the valid code in Editorfrom {string} at row {int} , then clicks the Run Button")
+	public void the_user_write_the_valid_code_in_editorfrom_at_row_and_column_then_clicks_the_run_button(String sheetName, Integer rowNumber) {
+
+		dataStructureIntroPF.codeEditorInput(sheetName, rowNumber);
+>>>>>>> Stashed changes
 		dataStructureIntroPF.runBtn();
 
 	}
 
+<<<<<<< Updated upstream
 	@Then("The user should able to see output in the console based on {string} at row {int} and column {int}")
 	public void the_user_should_able_to_see_output_in_the_console_based_on_at_row_and_column(String string, Integer int1, Integer int2) {
 	  
 		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.expectedResult(string, int1, int2),dataStructureIntroPF.output.getText());
+=======
+	@Then("The user write the valid code in Editorform {string} at row {int} , then clicks the Run Button")
+	public void the_user_write_the_valid_code_in_editorform_at_row_then_clicks_the_run_button(String sheetName, Integer rowNumber) {
+	  
+		Assert.assertEquals("An unexpected error occurred:", dataStructureIntroPF.expectedResult(sheetName,rowNumber),dataStructureIntroPF.output.getText());
+>>>>>>> Stashed changes
 	}
 
 	@Given("The user is in the Time Complexity page")
@@ -171,7 +237,11 @@ public class DataStructureIntroSteps {
 	@Then("The user should be redirected to Practice Questions of Data structures-Introduction")
 	public void the_user_should_be_redirected_to_practice_questions_of_data_structures_introduction() {
 
+<<<<<<< Updated upstream
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl7(),
+=======
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.DATA_STRUCTURES_INTRO_PRACTICE_URL,
+>>>>>>> Stashed changes
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -194,7 +264,11 @@ public class DataStructureIntroSteps {
 	@Then("The user should land in the page selected in the dropdown list")
 	public void the_user_should_land_in_the_page_selected_in_the_dropdown_list() {
 
+<<<<<<< Updated upstream
 		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl36(),
+=======
+		Assert.assertEquals("User is not on the Dashboard Page",UrlConstants.QUEUE_URL,
+>>>>>>> Stashed changes
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
@@ -217,7 +291,7 @@ public class DataStructureIntroSteps {
 	@Then("The user should land in the portal beginning page with Get Started Button")
 	public void the_user_should_land_in_the_portal_beginning_page_with_get_started_button() {
 
-		Assert.assertEquals("User is not on the Dashboard Page", dataStructureIntroPF.expectedUrl0(),
+		Assert.assertEquals("User is not on the Dashboard Page",UrlConstants.DS_ALGO_PORTAL_URL,
 				dataStructureIntroPF.getCurrentUrl());
 
 	}
