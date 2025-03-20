@@ -27,41 +27,40 @@ Feature: DataStructureIntro feature
   Scenario Outline: Verify that user receives error when click on Run button without entering code for Time Complexity page
     Given The user is on the Try Editor page of Time Complexity
     When The user clicks the Run Button without entering the code in the Editor
-    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> and column <expectedCol>
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber>
     
      Examples: 
-      | SheetName  | RowNumber | InputCol | expectedCol |
-      |pythonCode  |  2        | 0        | 1           |
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
       
      @tag5
   Scenario Outline: Verify that user receives an error for invalid Python code (NameError) on Time Complexity page
     Given The user is on the Try Editor page of Time Complexity
-    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> and column <InputCol>, then clicks the Run Button
-    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> and column <expectedCol>
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> 
     
     Examples: 
-      | SheetName  | RowNumber | InputCol | expectedCol |
-      |pythonCode  |  2        | 0        | 1           |
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
      
     @tag6
    Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Time Complexity page
     Given The user is on the Try Editor page of Time Complexity
-    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> and column <InputCol>, then clicks the Run Button
-    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> and column <expectedCol>
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber>
     
       Examples: 
-      | SheetName  | RowNumber | InputCol | expectedCol |
-      |pythonCode  |  3        | 0        | 1           |
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
      
     @tag7
  Scenario Outline: Verify that user is able to see output for valid python code for Time Complexity page
     Given The user is on the Try Editor page of Time Complexity
-    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> and column <InputCol>, then clicks the Run Button
-    Then The user should able to see output in the console based on "<SheetName>" at row <RowNumber> and column <expectedCol>
-    
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button    
     Examples: 
-      | SheetName  | RowNumber | InputCol | expectedCol |
-      |pythonCode  |    1      | 0        | 1           |
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
      
     
     @tag8
