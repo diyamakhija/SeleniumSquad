@@ -61,13 +61,12 @@ public class DataStructureIntroPF extends BaseClass {
 
 	}
 
-	public void codeEditorInput(String sheetName, Integer rowNumber,String header) {
+	public void codeEditorInput(String sheetName, Integer rowNumber) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,header));
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,"pCode"));
 	}
-
 	public void output() {
 
 		output.click();
@@ -118,54 +117,14 @@ public class DataStructureIntroPF extends BaseClass {
 		 return syntaxHandleAlert;
 	}
 	
-	public String expectedResult(String sheetName, Integer RowNumber, String header) {
+	public String expectedResult(String sheetName, Integer RowNumber) {
 
-		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, header);
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
 		return expectedErrorResult;
 
-	}
-
-	public String expectedUrl(String sheetName, Integer RowNumber, String expectedCol) {
-
-		String  expectedUrl=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, expectedCol);
-		return expectedUrl;
 
 	}
 
-	public String expectedUrl0() {
-
-		return ExcelSheetReader.expectedUrl(0);
-
 	}
 
-	public String expectedUrl2() {
 
-		return ExcelSheetReader.expectedUrl(2);
-	}
-
-	public String expectedUrl3() {
-
-		System.out.println( ExcelSheetReader.expectedUrl(3));
-		return ExcelSheetReader.expectedUrl(3);
-
-	}
-
-	public String expectedUrl4() {
-
-		return ExcelSheetReader.expectedUrl(4);
-
-	}
-
-	public String expectedUrl5() {
-
-		return ExcelSheetReader.expectedUrl(5);
-
-	}
-
-	public String expectedUrl30() {
-
-		return ExcelSheetReader.expectedUrl(30);
-
-	}
-
-}

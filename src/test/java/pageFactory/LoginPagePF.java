@@ -2,6 +2,8 @@ package pageFactory;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -45,7 +47,7 @@ public class LoginPagePF extends BaseClass {
 
 	public void userNameField() {
 
-		userNameField.sendKeys(ExcelSheetReader.userCredential("userCredentials",3,"username"));
+		userNameField.sendKeys(ExcelSheetReader.getExcelSheetData("userCredentials", 3,"username"));
 	}
 	
 	public void userNameField1() {
@@ -58,7 +60,7 @@ public class LoginPagePF extends BaseClass {
 
 	public void passwordField() {
 
-		passwordField.sendKeys(ExcelSheetReader.userCredential("userCredentials",3,"password"));
+		passwordField.sendKeys(ExcelSheetReader.getExcelSheetData("userCredentials", 3,"password"));
 	}
 
 	public void logInBtn() {
@@ -71,15 +73,10 @@ public class LoginPagePF extends BaseClass {
 		pageURL(ConfigReader.getPageURL());
 	}
 	
-	public String expectedUrl64() {
-
-		return ExcelSheetReader.expectedUrl(64);
-	}
-	
 	 @FindBy(xpath = "//div[@class='alert alert-success']") // Adjust XPath based on actual UI
 	    public WebElement successMessage;
 	
-	 @FindBy(xpath = "//div[@role='alert']") // Locator for error message
+	 @FindBy(xpath = "//div[@role='alert']") 
 	    public WebElement errorMessage;
 	
 	 public String getErrorMsg() {

@@ -145,17 +145,17 @@ public class ArrayPF extends BaseClass {
 	}
 	public void input() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
+		input.sendKeys(ExcelSheetReader.pythonCodeData(2));
 	}
 
 	public void input1() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
+		input.sendKeys(ExcelSheetReader.pythonCodeData(3));
 	}
 
 	public void input2() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
+		input.sendKeys(ExcelSheetReader.pythonCodeData(1));
 	}
 
 ////Method to login to DS Algo Portal
@@ -177,93 +177,93 @@ public class ArrayPF extends BaseClass {
 
 public String expectedUrl9() {
 
-	return ExcelSheetReader.expectedUrl(9).get(0);
+	return ExcelSheetReader.expectedUrl(9);
 }
 
 public String expectedNameErrorResult() {
 
-	return ExcelSheetReader.pythonCodeData(2).get(1);
+	return ExcelSheetReader.pythonCodeData(2);
 
 }
 
 public String expectedSyntaxErrorResult() {
 
-	return ExcelSheetReader.pythonCodeData(3).get(1);
+	return ExcelSheetReader.pythonCodeData(3);
 }
 
 public String expectederrorResult() {
 
-	return ExcelSheetReader.pythonCodeData(4).get(1);
+	return ExcelSheetReader.pythonCodeData(4);
 
 }
 public String validOutput() {
 
-	return ExcelSheetReader.pythonCodeData(1).get(1);
+	return ExcelSheetReader.pythonCodeData(1);
 
 }
 
 public String expectedUrl0() {
 
-	return ExcelSheetReader.expectedUrl(0).get(0);
+	return ExcelSheetReader.expectedUrl(0);
 
 }
 
 public String expectedUrl3() {
 
-	return ExcelSheetReader.expectedUrl(3).get(0);
+	return ExcelSheetReader.expectedUrl(3);
 }
 
 public String expectedUrl10() {
 
-	return ExcelSheetReader.expectedUrl(10).get(0);
+	return ExcelSheetReader.expectedUrl(10);
 
 }
 
 public String expectedUrl11() {
 
-	return ExcelSheetReader.expectedUrl(11).get(0);
+	return ExcelSheetReader.expectedUrl(11);
 
 }
 
 
 public String expectedUrl12() {
 
-	return ExcelSheetReader.expectedUrl(12).get(0);
+	return ExcelSheetReader.expectedUrl(12);
 
 }
 
 public String expectedUrl13() {
 
-	return ExcelSheetReader.expectedUrl(13).get(0);
+	return ExcelSheetReader.expectedUrl(13);
 
 }
 
 public String expectedUrl14() {
 
-	return ExcelSheetReader.expectedUrl(14).get(0);
+	return ExcelSheetReader.expectedUrl(14);
 
 }
 
 public String expectedUrl15() {
 
-	return ExcelSheetReader.expectedUrl(15).get(0);
+	return ExcelSheetReader.expectedUrl(15);
 
 }
 
 public String expectedUrl16() {
 
-	return ExcelSheetReader.expectedUrl(16).get(0);
+	return ExcelSheetReader.expectedUrl(16);
 
 }
 
 public String expectedUrl17() {
 
-	return ExcelSheetReader.expectedUrl(17).get(0);
+	return ExcelSheetReader.expectedUrl(17);
 }
 
 public String expectedUrl18() {
 
-	return ExcelSheetReader.expectedUrl(18).get(0);
+	return ExcelSheetReader.expectedUrl(18);
 
 }
 public void output() {
@@ -279,9 +279,9 @@ public String getCurrentUrl() {
 public String getExpectedUrl(String pageName) {
     switch (pageName.toLowerCase()) {
         case "practice":
-            return ExcelSheetReader.expectedUrl(14).get(0);
+            return ExcelSheetReader.expectedUrl(14);
         case "search the array":
-            return ExcelSheetReader.expectedUrl(15).get(0);
+            return ExcelSheetReader.expectedUrl(15);
         default:
             return "";
     }

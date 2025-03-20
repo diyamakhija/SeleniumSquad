@@ -108,7 +108,7 @@ public class TreeSteps {
 
 	@When("The user enters invalid Python code causing a NameError and clicks the Run button")
 	public void the_user_enters_invalid_python_code_causing_a_name_error_and_clicks_the_run_button() {
-		tree.input.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
+		tree.input.sendKeys(ExcelSheetReader.pythonCodeData(2));
 		tree.runBtn.click();
 		
 	}
@@ -141,8 +141,8 @@ public class TreeSteps {
 	@Then("The user should see the expected output displayed in the console   write a step definition file and page factory")
 	public void the_user_should_see_the_expected_output_displayed_in_the_console_write_a_step_definition_file_and_page_factory() {
 //		Assert.assertEquals("Output did not match", "Hello, Trees!", tree.getOutput());
-		System.out.println(ExcelSheetReader.pythonCodeData(1).get(1));
-		Assert.assertEquals(ExcelSheetReader.pythonCodeData(1).get(1),tree.output.getText());
+		System.out.println(ExcelSheetReader.pythonCodeData(1));
+		Assert.assertEquals(ExcelSheetReader.pythonCodeData(1),tree.output.getText());
 
 	}
     @Given("The user is in the Over View of tree page")
