@@ -51,7 +51,7 @@ public class RegistrationPF extends BaseClass {
 	}
     public String expectedUrl66() {
 
-		return ExcelSheetReader.expectedUrl(66).get(0);
+		return ExcelSheetReader.expectedUrl(66);
 	}
     
     public void userNameFld() {

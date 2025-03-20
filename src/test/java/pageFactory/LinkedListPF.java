@@ -2,10 +2,8 @@ package pageFactory;
 
 import java.time.Duration;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -105,7 +103,7 @@ public class LinkedListPF extends BaseClass {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
+		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2));
 
 	}
 
@@ -113,7 +111,7 @@ public class LinkedListPF extends BaseClass {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
+		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3));
 
 	}
 
@@ -121,7 +119,7 @@ public class LinkedListPF extends BaseClass {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
+		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1));
 
 	}
 
@@ -168,81 +166,24 @@ public class LinkedListPF extends BaseClass {
 
 	public String expectedNameErrorResult() {
 
-		String expectedNameErrorResult = ExcelSheetReader.pythonCodeData(2).get(1);
+		String expectedNameErrorResult = ExcelSheetReader.pythonCodeData(2);
 		return expectedNameErrorResult;
 
 	}
 
 	public String expectedSyntaxErrorResult() {
 
-		String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3).get(1);
+		String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3);
 		return expectedSyntaxErrorResult;
 	}
 
 	public String expectedErrorResult() {
 
-		String expectederrorResult = ExcelSheetReader.pythonCodeData(4).get(1);
+		String expectederrorResult = ExcelSheetReader.pythonCodeData(4);
 		return expectederrorResult;
 
 	}
 
-	public String expectedUrl0() {
-		return ExcelSheetReader.expectedUrl(0).get(0);
-
-	}
-
-	public String expectedUrl3() {
-		return ExcelSheetReader.expectedUrl(3).get(0);
-	}
-
-	public String validOutput() {
-		return ExcelSheetReader.pythonCodeData(1).get(1);
-
-	}
-
-	public String expectedUrl20() {
-		return ExcelSheetReader.expectedUrl(20).get(0);
-
-	}
-
-	public String expectedUrl21() {
-		return ExcelSheetReader.expectedUrl(21).get(0);
-
-	}
-
-	public String expectedUrl22() {
-		return ExcelSheetReader.expectedUrl(22).get(0);
-
-	}
-
-	public String expectedUrl23() {
-		return ExcelSheetReader.expectedUrl(23).get(0);
-
-	}
-
-	public String expectedUrl24() {
-		return ExcelSheetReader.expectedUrl(24).get(0);
-
-	}
-
-	public String expectedUrl25() {
-		return ExcelSheetReader.expectedUrl(25).get(0);
-
-	}
-
-	public String expectedUrl26() {
-		return ExcelSheetReader.expectedUrl(26).get(0);
-
-	}
-
-	public String expectedUrl27() {
-		return ExcelSheetReader.expectedUrl(27).get(0);
-
-	}
-
-	public String expectedUrl28() {
-		return ExcelSheetReader.expectedUrl(28).get(0);
-
-	}
+	
 
 }

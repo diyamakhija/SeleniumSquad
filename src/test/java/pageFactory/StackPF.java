@@ -60,13 +60,13 @@ public class StackPF extends BaseClass {
 	//open the URL for first time
 	public String expectedUrl1() {
 
-		return ExcelSheetReader.expectedUrl(1).get(0);
+		return ExcelSheetReader.expectedUrl(1);
 	}
 	
 	//Takes respective rule from spreadsheet
 	public <WebElementOperationinStack> String expectedUrl30() {
 
-		return ExcelSheetReader.expectedUrl(30).get(0);
+		return ExcelSheetReader.expectedUrl(30);
 	}
 	
 	public <operationsin> void OperationinStackBtn(WebElement OperationinStackBtn) {
@@ -77,25 +77,25 @@ public class StackPF extends BaseClass {
 	//Takes respective rule from spreadsheet
 	public <WebElementOperationinStack> String expectedUrl32() {
 
-		return ExcelSheetReader.expectedUrl(32).get(0);
+		return ExcelSheetReader.expectedUrl(32);
 	}
 	//Takes respective rule from spreadsheet
 	public <WebElementOperationinStack> String expectedUrl33() {
 
-			return ExcelSheetReader.expectedUrl(33).get(0);
+			return ExcelSheetReader.expectedUrl(33);
 	}
 	//Takes respective rule from spreadsheet
 	public <WebElementOperationinStack> String expectedUrl34() {
 
-			return ExcelSheetReader.expectedUrl(34).get(0);
+			return ExcelSheetReader.expectedUrl(34);
 	}
 	public <WebElementOperationinStack> String expectedUrl35() {
 
-		return ExcelSheetReader.expectedUrl(35).get(0);
+		return ExcelSheetReader.expectedUrl(35);
 	}
 	public <WebElementOperationinStack> String expectedUrl36() {
 
-		return ExcelSheetReader.expectedUrl(36).get(0);
+		return ExcelSheetReader.expectedUrl(36);
 	}
 
 	public void OperationinStackBtn() {
@@ -109,17 +109,17 @@ public class StackPF extends BaseClass {
 
 	public void input() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(2).get(0));
+		input.sendKeys(ExcelSheetReader.pythonCodeData(2));
 	}
 
 	public void input1() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(3).get(0));
+		input.sendKeys(ExcelSheetReader.pythonCodeData(3));
 	}
 
 	public void input2() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(1).get(0));
+		input.sendKeys(ExcelSheetReader.pythonCodeData(1));
 	}
 
 	public void runBtn() {
@@ -177,19 +177,19 @@ public class StackPF extends BaseClass {
 
 	public String expectedNameErrorResult() {
 
-		return ExcelSheetReader.pythonCodeData(2).get(1);
+		return ExcelSheetReader.pythonCodeData(2);
 
 	}
 
 	public String expectedSyntaxErrorResult() {
 
-		return ExcelSheetReader.pythonCodeData(3).get(1);
+		return ExcelSheetReader.pythonCodeData(3);
 
 	}
 
 	public String expectederrorResult() {
 
-		return ExcelSheetReader.pythonCodeData(4).get(1);
+		return ExcelSheetReader.pythonCodeData(4);
 
 	}
 

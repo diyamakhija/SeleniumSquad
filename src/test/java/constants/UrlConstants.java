@@ -1,0 +1,63 @@
+package constants;
+
+public class UrlConstants {
+
+	public static final String DS_ALGO_PORTAL_URL = "https://dsportalapp.herokuapp.com/";
+	public static final String HOME_URL = "https://dsportalapp.herokuapp.com/home";
+	public static final String LOGIN_URL = "https://dsportalapp.herokuapp.com/login";
+	public static final String REGISTER_URL = "https://dsportalapp.herokuapp.com/register";
+	public static final String TRYEDITOR_URL = "https://dsportalapp.herokuapp.com/tryEditor";
+	public static final String DATA_STRUCTURES_INRO_URL = "https://dsportalapp.herokuapp.com/data-structures-introduction/";
+	public static final String DATA_STRUCTURES_INTRO_TIME_COMPLEXITY_URL = "https://dsportalapp.herokuapp.com/data-structures-introduction/time-complexity/";
+	public static final String DATA_STRUCTURES_INTRO_PRACTICE_URL = "https://dsportalapp.herokuapp.com/data-structures-introduction/practice";
+	public static final String ARRAY_PAGE_URL = "https://dsportalapp.herokuapp.com/array/";
+	public static final String ARRAY_ARRAYS_IN_PYTHON_URL = "https://dsportalapp.herokuapp.com/array/arrays-in-python/";
+	public static final String ARRAY_ARRAYS_USING_LIST_URL = "https://dsportalapp.herokuapp.com/array/arrays-using-list/";
+	public static final String ARRAY_BASIC_OPERATIONS_IN_LISTS_URL = "https://dsportalapp.herokuapp.com/array/basic-operations-in-lists/";
+	public static final String ARRAY_APPLICATIONS_OF_ARRAY_URL = "https://dsportalapp.herokuapp.com/array/applications-of-array/";
+	public static final String ARRAY_PRACTICE_URL = "https://dsportalapp.herokuapp.com/array/practice";
+	public static final String ARRAY_QUESTION1_URL = "https://dsportalapp.herokuapp.com/question/1";
+	public static final String ARRAY_QUESTION2_URL = "https://dsportalapp.herokuapp.com/question/2";
+	public static final String ARRAY_QUESTION3_URL = "https://dsportalapp.herokuapp.com/question/3";
+	public static final String ARRAY_QUESTION4_URL = "https://dsportalapp.herokuapp.com/question/4";
+	public static final String LINKED_LIST_URL = "https://dsportalapp.herokuapp.com/linked-list/";
+	public static final String LINKED_LIST_INTRO_URL = "https://dsportalapp.herokuapp.com/linked-list/introduction/";
+	public static final String LINKED_LIST_CREATING_LINKED_LIST_URL = "https://dsportalapp.herokuapp.com/linked-list/creating-linked-list/";
+	public static final String LINKED_LIST_TYPES_OF_LINKED_LIST_URL = "https://dsportalapp.herokuapp.com/linked-list/types-of-linked-list/";
+	public static final String LINKED_LIST_IMPLEMENT_LINKEDLIST_IN_PYTHON_URL = "https://dsportalapp.herokuapp.com/linked-list/implement-linked-list-in-python/";
+	public static final String LINKED_LIST_TRAVERSAL_URL = "https://dsportalapp.herokuapp.com/linked-list/traversal/";
+	public static final String LINKED_LIST_INSERTION_IN_LINKED_LIST_URL = "https://dsportalapp.herokuapp.com/linked-list/insertion-in-linked-list/";
+	public static final String LINKED_LIST_DELETION_IN_LINKED_LIST_URL = "https://dsportalapp.herokuapp.com/linked-list/deletion-in-linked-list/";
+	public static final String LINKED_LIST_PRACTICE_URL = "https://dsportalapp.herokuapp.com/linked-list/practice";
+	public static final String STACK_URL = "https://dsportalapp.herokuapp.com/stack/";
+	public static final String STACK_OPERATIONS_IN_STACK_URL = "https://dsportalapp.herokuapp.com/stack/operations-in-stack/";
+	public static final String STACK_IMPLEMENTATION_URL = "https://dsportalapp.herokuapp.com/stack/implementation/";
+	public static final String STACK_STACK_APPLICATIONS_URL = "https://dsportalapp.herokuapp.com/stack/stack-applications/";
+	public static final String STACK_PRACTICE_URL = "https://dsportalapp.herokuapp.com/stack/practice";
+	public static final String QUEUE_URL = "https://dsportalapp.herokuapp.com/queue/";
+	public static final String QUEUE_IMPLEMENTATION_LISTS_URL = "https://dsportalapp.herokuapp.com/queue/implementation-lists/";
+	public static final String QUEUE_IMPLEMENTATION_COLLECTIONS_URL = "https://dsportalapp.herokuapp.com/queue/implementation-collections/";
+	public static final String QUEUE_IMPLEMENTATION_ARRAY_URL = "https://dsportalapp.herokuapp.com/queue/Implementation-array/";
+	public static final String QUEUE_QUEUEOP_URL = "https://dsportalapp.herokuapp.com/queue/QueueOp/";
+	public static final String QUEUE_PRACTICE_URL = "https://dsportalapp.herokuapp.com/queue/practice";
+	public static final String TREE_URL = "https://dsportalapp.herokuapp.com/tree/";
+	public static final String TREE_OVERVIEW_OF_TREES_URL = "https://dsportalapp.herokuapp.com/tree/overview-of-trees/";
+	public static final String TREE_TERMINOLOGIES_URL = "https://dsportalapp.herokuapp.com/tree/terminologies/";
+	public static final String TREE_TPES_OF_TREES_URL = "https://dsportalapp.herokuapp.com/tree/types-of-trees/";
+	public static final String TREE_TREE_TRAVERSALS_URL = "https://dsportalapp.herokuapp.com/tree/tree-traversals/";
+	public static final String TREE_TRAVERSALS_ILLUSTRATION_URL = "https://dsportalapp.herokuapp.com/tree/traversals-illustration/";
+	public static final String TREE_BINARY_TREES_URL = "https://dsportalapp.herokuapp.com/tree/binary-trees/";
+	public static final String TREE_TYPES_OF_BINARY_TREES_URL = "https://dsportalapp.herokuapp.com/tree/types-of-binary-trees/";
+	public static final String TREE_IMPLEMENTATION_IN_PYTHON_URL = "https://dsportalapp.herokuapp.com/tree/implementation-in-python/";
+	public static final String TREE_BINARY_TREE_TRAVERSALS_URL = "https://dsportalapp.herokuapp.com/tree/binary-tree-traversals/";
+	public static final String TREE_IMPLEMENTATION_OF_BINARY_TREES_URL = "https://dsportalapp.herokuapp.com/tree/implementation-of-binary-trees/";
+	public static final String TREE_APPLICATIONS_OF_BINARY_TREES_URL = "https://dsportalapp.herokuapp.com/tree/applications-of-binary-trees/";
+	public static final String TREE_BINARY_SEARCH_TREES_URL = "https://dsportalapp.herokuapp.com/tree/binary-search-trees/";
+	public static final String TREE_IMPLEMENTATION_OF_BST_URL = "https://dsportalapp.herokuapp.com/tree/implementation-of-bst/";
+	public static final String TREE_PRACTICE_URL = "https://dsportalapp.herokuapp.com/tree/practice";
+	public static final String GRAPH_URL = "https://dsportalapp.herokuapp.com/graph/";
+	public static final String GRAPH_GRAPH_URL = "https://dsportalapp.herokuapp.com/graph/graph/";
+	public static final String GRAPH_GRAPH_REPRESENTATIONS_URL = "https://dsportalapp.herokuapp.com/graph/graph-representations/";
+	public static final String GRAPH_GRAPH_PRACTICE_URL = "https://dsportalapp.herokuapp.com/graph/practice";
+
+}
