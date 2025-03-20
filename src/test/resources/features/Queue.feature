@@ -24,28 +24,44 @@ Feature: Queue feature
     Then The user should be redirected to a page having an try Editor with a "Run" button to test
 
   @tag4
-  Scenario: Verify that user receives error when click on Run button without entering code for Implementation of Queue in Python page
+  Scenario Outline: Verify that user receives error when click on Run button without entering code for Implementation of Queue in Python page
     Given The user is in the tryEditor page of Implementation of Queue in Python
     When The user clicks the Run Button without entering the code in the Editor page
-    Then The user should able to see and error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
   @tag5
-  Scenario: Verify that user receives error for invalid python code(name error) for Implementation of Queue in Python page
+  Scenario Outline: Verify that user receives error for invalid python code(name error) for Implementation of Queue in Python page
     Given The user is in the tryEditor page of Implementation of Queue in Python
-    When The user write the invalid name code in Editor and click the Run Button
-    Then The user should able to see a name error message in alert window
-
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
+     
   @tag6
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Implementation of Queue in Python page
+ Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Implementation of Queue in Python page
     Given The user is in the tryEditor page of Implementation of Queue in Python
-    When The user write the invalid syntax code in Editor and click the Run Button
-    Then The user should able to see a syntax error msg in alert window
-
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
+     
   @tag7
-  Scenario: Verify that user is able to see output for valid python code for Implementation of Queue in Python page
+  Scenario Outline: Verify that user is able to see output for valid python code for Implementation of Queue in Python page
     Given The user is in the tryEditor page of Implementation of Queue in Python
-    When The user write the valid code in Editor and click the "Run" Button
-    Then The user should able to "see output" in the console
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Queue 
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
   @tag8
   Scenario: Verify that user is able to navigate to Implementation using collections.deque page
@@ -60,28 +76,45 @@ Feature: Queue feature
     Then The user should be redirected to a page having an try Editor with a "Run" button to test
 
   @tag10
-  Scenario: Verify that user receives error when click on Run button without entering code for Implementation using collections.deque page
+  Scenario Outline: Verify that user receives error when click on Run button without entering code for Implementation using collections.deque page
     Given The user is in the tryEditor page of Implementation using collections.deque
     When The user clicks the Run Button without entering the code in the Editor page
-    Then The user should able to see and error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
   @tag11
-  Scenario: Verify that user receives error for invalid python code(name error) for Implementation using collections.deque page
+  Scenario Outline: Verify that user receives error for invalid python code(name error) for Implementation using collections.deque page
     Given The user is in the tryEditor page of Implementation using collections.deque
-    When The user write the invalid name code in Editor and click the Run Button
-    Then The user should able to see a name error message in alert window
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Queue
     
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
+      
   @tag12
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Implementation using collections.deque page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Implementation using collections.deque page
     Given The user is in the tryEditor page of Implementation using collections.deque
-    When The user write the invalid syntax code in Editor and click the Run Button
-    Then The user should able to see a syntax error msg in alert window
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
+      
 
   @tag13
-  Scenario: Verify that user is able to see output for valid python code for Implementation using collections.deque page
+  Scenario Outline: Verify that user is able to see output for valid python code for Implementation using collections.deque page
     Given The user is in the tryEditor page of Implementation using collections.deque
-    When The user write the valid code in Editor and click the "Run" Button
-    Then The user should able to "see output" in the console
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Queue 
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
   @tag14
   Scenario: Verify that user is able to navigate to Implementation using Array page
@@ -96,29 +129,45 @@ Feature: Queue feature
     Then The user should be redirected to a page having an try Editor with a "Run" button to test
 
   @tag16
-  Scenario: Verify that user receives error when click on Run button without entering code for Implementation using Array page
+  Scenario Outline: Verify that user receives error when click on Run button without entering code for Implementation using Array page
     Given The user is in the tryEditor page of Implementation using Array page
     When The user clicks the Run Button without entering the code in the Editor page
-    Then The user should able to see and error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
   @tag17
-  Scenario: Verify that user receives error for invalid python code(name error) for Implementation using Array page
+ Scenario Outline: Verify that user receives error for invalid python code(name error) for Implementation using Array page
     Given The user is in the tryEditor page of Implementation using Array page
-    When The user write the invalid name code in Editor and click the Run Button
-    Then The user should able to see a name error message in alert window
-
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
+      
   @tag18
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Implementation using Array page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Implementation using Array page
     Given The user is in the tryEditor page of Implementation using Array page
-    When The user write the invalid syntax code in Editor and click the Run Button
-    Then The user should able to see a syntax error msg in alert window
-
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
+      
   @tag19
-  Scenario: Verify that user is able to see output for valid python code for Implementation using Array page
+  Scenario Outline: Verify that user is able to see output for valid python code for Implementation using Array page
     Given The user is in the tryEditor page of Implementation using Array page
-    When The user write the valid code in Editor and click the "Run" Button
-    Then The user should able to "see output" in the console
-
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Queue 
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
+      
   @tag20
   Scenario: Verify that user is able to navigate to Queue Operations page
     Given The user is in the Queue page after Sign in
@@ -132,29 +181,44 @@ Feature: Queue feature
     Then The user should be redirected to a page having an "try Editor" with a "Run" button to test
 
   @tag22
-  Scenario: Verify that user receives error when click on "Run" button without entering code for Queue Operations page
+  Scenario Outline: Verify that user receives error when click on "Run" button without entering code for Queue Operations page
     Given The user is in the tryEditor page of  Queue Operations page
     When The user clicks the Run Button without entering the code in the Editor page
-    Then The user should able to see and error message in alert window
-
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
+      
   @tag23
-  Scenario: Verify that user receives error for invalid python code(name error) for Queue Operations page
+ Scenario Outline: Verify that user receives error for invalid python code(name error) for Queue Operations page
     Given The user is in the tryEditor page of  Queue Operations page
-    When The user write the invalid name code in Editor and click the Run Button
-    Then The user should able to see a name error message in alert window
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
   @tag24
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Queue Operations page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Queue Operations page
     Given The user is in the tryEditor page of  Queue Operations page
-    When The user write the invalid syntax code in Editor and click the Run Button
-    Then The user should able to see a syntax error msg in alert window
-
+   When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Queue
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
 
   @tag25
-  Scenario: Verify that user is able to see output for valid python code for Queue Operations page
+  Scenario Outline: Verify that user is able to see output for valid python code for Queue Operations page
     Given The user is in the tryEditor page of  Queue Operations page
-    When The user write the valid code in Editor and click the "Run" Button
-    Then The user should able to "see output" in the console
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Queue 
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
   @tag26
   Scenario: Verify that user is able to navigate to Practice Questions Page for Implementation of Queue in Python page

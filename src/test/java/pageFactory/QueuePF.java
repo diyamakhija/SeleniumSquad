@@ -69,30 +69,13 @@ public class QueuePF extends BaseClass {
 		 
 	}
 
-	public void nameinput() {
+	public void codeEditorInput(String sheetName, Integer rowNumber) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2));		
-		
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,"pCode"));
 	}
-
-	public void syntaxinput() {
-
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3));
-	}
-
-	public void validinput() {
-
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1));
-	}
-
+	
 	public void runBtn() {
 
 		runBtn.click();
@@ -160,84 +143,24 @@ public class QueuePF extends BaseClass {
 
 	}
 
-	public String expectedNameErrorResult() {
+//	public String expectedNameErrorResult() {
+//
+//		String  expectedNameErrorResult=ExcelSheetReader.pythonCodeData(2);
+//		return expectedNameErrorResult;
+//
+//	}
+//
+//	public String expectedSyntaxErrorResult() {
+//
+//		 String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3);
+//		 return expectedSyntaxErrorResult ;
+//
+//	}
 
-		String  expectedNameErrorResult=ExcelSheetReader.pythonCodeData(2);
-		return expectedNameErrorResult;
+	public String expectedResult(String sheetName, Integer RowNumber) {
 
-	}
-
-	public String expectedSyntaxErrorResult() {
-
-		 String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3);
-		 return expectedSyntaxErrorResult ;
-
-	}
-
-	public String expectederrorResult() {
-
-		String expectederrorResult = ExcelSheetReader.pythonCodeData(4);
-		 return expectederrorResult;
-
-	}
-
-	public String expectedUrl0() {
-
-		return ExcelSheetReader.expectedUrl(0);
-
-	}
-
-	public String expectedUrl3() {
-
-		return ExcelSheetReader.expectedUrl(3);
-	}
-
-	public String validOutput() {
-
-		return ExcelSheetReader.pythonCodeData(1);
-
-	}
-
-	public String expectedUrl36() {
-
-		return ExcelSheetReader.expectedUrl(36);
-
-	}
-
-	public String expectedUrl37() {
-
-		return ExcelSheetReader.expectedUrl(37);
-
-	}
-
-	public String expectedUrl38() {
-
-		return ExcelSheetReader.expectedUrl(38);
-
-	}
-
-	public String expectedUrl39() {
-
-		return ExcelSheetReader.expectedUrl(39);
-
-	}
-
-	public String expectedUrl40() {
-
-		return ExcelSheetReader.expectedUrl(40);
-
-	}
-
-	public String expectedUrl41() {
-
-		return ExcelSheetReader.expectedUrl(41);
-
-	}
-
-	public String expectedUrl43() {
-
-		return ExcelSheetReader.expectedUrl(43);
-
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
+		return expectedErrorResult;
 	}
 
 }

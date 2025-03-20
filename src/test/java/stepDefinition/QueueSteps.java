@@ -2,12 +2,12 @@ package stepDefinition;
 
 import org.junit.Assert;
 
+import constants.UrlConstants;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageFactory.LoginPagePF;
 import pageFactory.QueuePF;
-import utilities.ExcelSheetReader;
 import utilities.LoggerLoad;
 
 public class QueueSteps {
@@ -32,7 +32,7 @@ public class QueueSteps {
 	@Then("The user be directed to {string} Data Structure Home Page")
 	public void the_user_be_directed_to_data_structure_home_page(String string) {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl36(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page",UrlConstants.QUEUE_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -54,7 +54,7 @@ public class QueueSteps {
 	@Then("The user should be redirected to {string} page")
 	public void the_user_should_be_redirected_to_page(String string) {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl37(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.QUEUE_IMPLEMENTATION_LISTS_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -77,7 +77,7 @@ public class QueueSteps {
 	@Then("The user should be redirected to a page having an try Editor with a {string} button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_button_to_test(String string) {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl3(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.TRYEDITOR_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -90,7 +90,8 @@ public class QueueSteps {
 		LoggerLoad.info("The user is in the tryEditor page of Implementation using Array pagen");
 
 	}
-
+	
+	
 	@When("The user clicks the Run Button without entering the code in the Editor page")
 	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_page() {
 
@@ -98,56 +99,57 @@ public class QueueSteps {
 
 	}
 
-	@Then("The user should able to see and error message in alert window")
-	public void the_user_should_able_to_see_and_error_message_in_alert_window() {
+	@Then("The user should able to see  an error message in alert window based on {string} at row {int} for Queue")
+	public void the_user_should_able_to_see_an_error_message_in_alert_window_based_on_at_row_for_queue(String sheetName, Integer rowNumber) {
 
-		Assert.assertEquals("An unexpected error occurred:", queuePF.handleAlert1(), queuePF.expectederrorResult());
+		Assert.assertEquals("An unexpected error occurred:", queuePF.handleAlert1(),queuePF.expectedResult(sheetName,rowNumber));
 
 	}
+	
 
-	@When("The user write the invalid name code in Editor and click the Run Button")
-	public void the_user_write_the_invalid_name_code_in_editor_and_click_the_run_button() {
+	@When("The user writes the invalid name code in the Editor from {string} at row {int} , then clicks the Run Button for Queue")
+	public void the_user_writes_the_invalid_name_code_in_the_editor_from_at_row_then_clicks_the_run_button_for_queue(String sheetName, Integer rowNumber) {
 
-		queuePF.nameinput();	
+		queuePF.codeEditorInput(sheetName, rowNumber);
 		queuePF.runBtn();
 
 	}
 
-	@Then("The user should able to see a name error message in alert window")
-	public void the_user_should_able_to_see_a_name_error_message_in_alert_window() {
+	@Then("The user should see a NameError message in the alert window based on {string} at row {int} for Queue")
+	public void the_user_should_see_a_name_error_message_in_the_alert_window_based_on_at_row_for_queue(String sheetName, Integer rowNumber) {
 
 		Assert.assertEquals("An unexpected error occurred:", queuePF.nameHandleAlert(),
-				queuePF.expectedNameErrorResult());
+				queuePF.expectedResult(sheetName,rowNumber));
 
 	}
 
-	@When("The user write the invalid syntax code in Editor and click the Run Button")
-	public void the_user_write_the_invalid_syntax_code_in_editor_and_click_the_run_button() {
+	@When("The user write the invalid syntaxcode in Editor from {string} at row {int} , then clicks the Run Button for Queue")
+	public void the_user_write_the_invalid_syntaxcode_in_editor_from_at_row_then_clicks_the_run_button_for_queue(String sheetName, Integer rowNumber) {
 
-		queuePF.syntaxinput();
+		queuePF.codeEditorInput(sheetName, rowNumber);
 		queuePF.runBtn();
 	}
 
-	@Then("The user should able to see a syntax error msg in alert window")
-	public void the_user_should_able_to_see_a_syntax_error_msg_in_alert_window() {
+	@Then("The user should able to see an syntax error message in alert window based on {string} at row {int} for Queue")
+	public void the_user_should_able_to_see_an_syntax_error_message_in_alert_window_based_on_at_row_for_queue(String sheetName, Integer rowNumber) {
 
 		Assert.assertEquals("An unexpected error occurred:", queuePF.syntaxHandleAlert(),
-				queuePF.expectedSyntaxErrorResult());
+				queuePF.expectedResult(sheetName,rowNumber));
 
 	}
 
-	@When("The user write the valid code in Editor and click the {string} Button")
-	public void the_user_write_the_valid_code_in_editor_and_click_the_button(String string) {
-
-		queuePF.validinput();
+	@When("The user write the valid code in Editorfrom {string} at row {int} , then clicks the Run Button for Queue")
+	public void the_user_write_the_valid_code_in_editorfrom_at_row_then_clicks_the_run_button_for_queue(String sheetName, Integer rowNumber) {
+		
+		queuePF.codeEditorInput(sheetName, rowNumber);
 		queuePF.runBtn();
 
 	}
 
-	@Then("The user should able to {string} in the console")
-	public void the_user_should_able_to_in_the_console(String string) {
-
-		Assert.assertEquals(queuePF.validOutput(), queuePF.output.getText());
+	@Then("The user write the valid code in Editorform {string} at row {int} , then clicks the Run Button  for Queue")
+	public void the_user_write_the_valid_code_in_editorform_at_row_then_clicks_the_run_button_for_queue(String sheetName, Integer rowNumber) {
+		
+		Assert.assertEquals(queuePF.expectedResult(sheetName,rowNumber), queuePF.output.getText());
 
 	}
 
@@ -170,7 +172,7 @@ public class QueueSteps {
 	public void the_user_should_be_redirected_to_implementation_using_collections_deque_page() {
 
 		Assert.assertEquals("The user should be redirected to Implementation using collections.deque page",
-				queuePF.expectedUrl38(), queuePF.getCurrentUrl());
+				UrlConstants.QUEUE_IMPLEMENTATION_COLLECTIONS_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -210,7 +212,7 @@ public class QueueSteps {
 	public void the_user_should_be_redirected_to_implementation_using_array_page() {
 
 		Assert.assertEquals("The user should be redirected to Implementation using collections.deque page",
-				queuePF.expectedUrl39(), queuePF.getCurrentUrl());
+				UrlConstants.QUEUE_IMPLEMENTATION_ARRAY_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -250,7 +252,7 @@ public class QueueSteps {
 	public void the_user_should_be_redirected_to_queue_operations_page() {
 
 		Assert.assertEquals("The user should be redirected to Implementation using collections.deque page",
-				queuePF.expectedUrl40(), queuePF.getCurrentUrl());
+				UrlConstants.QUEUE_QUEUEOP_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -273,7 +275,7 @@ public class QueueSteps {
 	@Then("The user should be redirected to a page having an {string} with a {string} button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_with_a_button_to_test(String string, String string2) {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl3(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.TRYEDITOR_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -296,7 +298,7 @@ public class QueueSteps {
 	@Then("The user should be redirected to Practice Questions page")
 	public void the_user_should_be_redirected_to_practice_questions_page() {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl41(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.QUEUE_PRACTICE_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -310,7 +312,7 @@ public class QueueSteps {
 	@Then("The user should land in the portal beginning page which has Get Started Button")
 	public void the_user_should_land_in_the_portal_beginning_page_which_has_get_started_button() {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl0(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.DS_ALGO_PORTAL_URL, queuePF.getCurrentUrl());
 
 	}
 
@@ -332,7 +334,7 @@ public class QueueSteps {
 	@Then("The user should land in the page selected in the dropdown list.")
 	public void the_user_should_land_in_the_page_selected_in_the_dropdown_list() {
 
-		Assert.assertEquals("User is not on the Dashboard Page", queuePF.expectedUrl43(), queuePF.getCurrentUrl());
+		Assert.assertEquals("User is not on the Dashboard Page", UrlConstants.TREE_URL, queuePF.getCurrentUrl());
 
 	}
 
