@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
     monochrome = false, // Console output color
-    tags = "", // Tags from feature file
+    tags = "@DS", // Tags from feature file
     features = { "src/test/resources/features" }, // Location of feature files
     glue = { "stepDefinition", "hooks" }, // Location of step definition files
     plugin = {
@@ -16,7 +16,8 @@ import io.cucumber.testng.CucumberOptions;
         "html:target/cucumber-reports/dsalgo.html",
         "json:target/cucumber.json",  // Generates JSON report
         "junit:target/cucumber.xml",  // Generates JUnit XML report
-        "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+        "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
     },
     dryRun = false // Set to true to check missing step definitions
 )
