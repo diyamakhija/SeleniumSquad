@@ -2,17 +2,13 @@ package pageFactory;
 
 import java.time.Duration;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import utilities.ExcelSheetReader;
-import utilities.LoggerLoad;
-import pageFactory.BaseClass;
+
 
 public class ArrayPF extends BaseClass {
 	ExcelSheetReader excelSheetReader = new ExcelSheetReader();
@@ -23,6 +19,9 @@ public class ArrayPF extends BaseClass {
 	@FindBy(xpath = "//a[@href='array' and contains(@class, 'btn-primary')]")
 	
 	WebElement getStartedArrayButton;
+	
+	@FindBy(xpath = "//form[@id='answer_form']")
+	public WebElement form;
 
 	@FindBy(xpath = "//a[text()='Arrays in Python']")
 	WebElement arraysInPythonButton;
@@ -143,177 +142,34 @@ public class ArrayPF extends BaseClass {
 	public String getConsoleOutput() {
 		return consoleOutput.getText();
 	}
-	public void input() {
 
-		input.sendKeys(ExcelSheetReader.pythonCodeData(2));
-	}
-
-	public void input1() {
-
-		input.sendKeys(ExcelSheetReader.pythonCodeData(3));
-	}
-
-	public void input2() {
-
-		input.sendKeys(ExcelSheetReader.pythonCodeData(1));
-	}
-
-////Method to login to DS Algo Portal
-//public void loginToDsAlgoPortal(String username, String password) {
-//    // Enter the username and password
-//    usernameField.sendKeys(username);
-//    passwordField.sendKeys(password);
-//    loginButton.click(); // Click login button
-//
-//    // Optionally, wait for home page title to be visible (indicating successful login)
-//    waitForElement(homePageTitle);
-//}
-//
-//// Helper method to wait for an element to be visible
-//private void waitForElement(WebElement element) {
-//    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//    wait.until(ExpectedConditions.visibilityOf(element));  // Wait for the element to become visible
-//}
-
-public String expectedUrl9() {
-
-	return ExcelSheetReader.expectedUrl(9);
-}
-
-public String expectedNameErrorResult() {
-
-	return ExcelSheetReader.pythonCodeData(2);
-
-}
-
-public String expectedSyntaxErrorResult() {
-
-	return ExcelSheetReader.pythonCodeData(3);
-}
-
-public String expectederrorResult() {
-
-	return ExcelSheetReader.pythonCodeData(4);
-
-}
-public String validOutput() {
-
-	return ExcelSheetReader.pythonCodeData(1);
-
-}
-
-public String expectedUrl0() {
-
-	return ExcelSheetReader.expectedUrl(0);
-
-}
-
-public String expectedUrl3() {
-
-	return ExcelSheetReader.expectedUrl(3);
-}
-
-public String expectedUrl10() {
-
-	return ExcelSheetReader.expectedUrl(10);
-
-}
-
-public String expectedUrl11() {
-
-	return ExcelSheetReader.expectedUrl(11);
-
-}
-
-
-public String expectedUrl12() {
-
-	return ExcelSheetReader.expectedUrl(12);
-
-}
-
-public String expectedUrl13() {
-
-	return ExcelSheetReader.expectedUrl(13);
-
-}
-
-public String expectedUrl14() {
-
-	return ExcelSheetReader.expectedUrl(14);
-
-}
-
-public String expectedUrl15() {
-
-	return ExcelSheetReader.expectedUrl(15);
-
-}
-
-public String expectedUrl16() {
-
-	return ExcelSheetReader.expectedUrl(16);
-
-}
-
-public String expectedUrl17() {
-
-	return ExcelSheetReader.expectedUrl(17);
-}
-
-public String expectedUrl18() {
-
-	return ExcelSheetReader.expectedUrl(18);
-
-}
 public void output() {
 
 consoleOutput.click();
 }
+
 public String getCurrentUrl() {
     return driver.getCurrentUrl();  // Ensure this returns the actual browser URL
 }
 
 
 
-public String getExpectedUrl(String pageName) {
-    switch (pageName.toLowerCase()) {
-        case "practice":
-            return ExcelSheetReader.expectedUrl(14);
-        case "search the array":
-            return ExcelSheetReader.expectedUrl(15);
-        default:
-            return "";
-    }
+public void codeEditorInput(String sheetName, Integer rowNumber) {
+	WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	webDriverWait.until(ExpectedConditions.visibilityOf(form));
+	form.click();
+	editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,"pCode"));
 }
 
 	
 
-public String handleAlert() {
-    String alertText = "";
-    try {
-        // Wait for the alert to be present (optional but recommended)
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.alertIsPresent());
+public String expectedResult(String sheetName, Integer RowNumber) {
 
-        Alert alert = driver.switchTo().alert();
-        alertText = alert.getText();
-        alert.accept();
+	String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
+	return expectedErrorResult;
 
-        LoggerLoad.info("Alert accepted with text: " + alertText);
 
-    } catch (NoAlertPresentException e) {
-        // Alert was not present as expected
-        LoggerLoad.error("Alert was not present.");
-        Assert.fail("No alert was triggered as expected.");  // Fail the test with a message
-    } catch (Exception e) {
-        // Some other error occurred
-        LoggerLoad.error("An error occurred: " + e.getMessage());
-        Assert.fail("An unexpected error occurred: " + e.getMessage());  // Fail the test with an error message
-    }
-    return alertText;
 }
-
 }
 
 
