@@ -84,48 +84,23 @@ public class TreePF extends BaseClass {
         tryHereBtn.click();
     }
 
-    
-    public void nameinput() {
+    public void codeEditorInput(String sheetName, Integer rowNumber) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2));		
-		
-	}
-
-	public void syntaxinput() {
-
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3));
-	}
-
-	public void validinput() {
-
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1));
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,"pCode"));
 	}
     
-    public void enterPythonCode() {
-        input.sendKeys(ExcelSheetReader.pythonCodeData(2));
-    }
-
-    public void enterPythonCode1() {
-        input.sendKeys(ExcelSheetReader.pythonCodeData(3));
-    }
-
-    public void enterPythonCode2() {
-        input.sendKeys(ExcelSheetReader.pythonCodeData(1));
-    }
 
     
     public void clickRun() {
         runBtn.click();
     }
 
+public void overviewOfTreesBtn() {
+		
+		overviewOfTreesBtn.click();
+	}
     
     public void clickTerminology() {
         terminologyBtn.click();
@@ -163,58 +138,33 @@ public class TreePF extends BaseClass {
 
     
     public String handleAlert1() {
-        return handleAlert1();
-    }
 
-    public String handleNameAlert() {
-        return handleAlert1();
-    }
-
-    public String handleSyntaxAlert() {
-        return handleAlert1();
-    }
-
-   
-    public String getExpectedNameError() {
-        return ExcelSheetReader.pythonCodeData(2);
-    }
-
-    public String getExpectedSyntaxError() {
-        return ExcelSheetReader.pythonCodeData(3);
-    }
-
-    public String getExpectedErrorResult() {
-        return ExcelSheetReader.pythonCodeData(4);
-    }
-
-    
-    public String getExpectedUr43() {
-        return ExcelSheetReader.expectedUrl(43);
-    }
-
-    public String getExpectedUrl44() {
-        return ExcelSheetReader.expectedUrl(44);
-    }
-
-    public String getExpectedUrl45() {
-        return ExcelSheetReader.expectedUrl(45);
-    }
-
-    public String getExpectedUrl46() {
-        return ExcelSheetReader.expectedUrl(46);
-    }
-
-    public String getExpectedUrl7() {
-        return ExcelSheetReader.expectedUrl(7);
-    }
-
-    public String getExpectedUrl36() {
-        return ExcelSheetReader.expectedUrl(36);
-    }
-
-	public void overviewOfTreesBtn() {
-		
-		overviewOfTreesBtn.click();
+		 String handleAlert1 = handleAlert();
+		 return handleAlert1;
+		  
 	}
+
+	public String nameHandleAlert() {
+
+		 String nameHandleAlert = handleAlert();
+		 return nameHandleAlert;
+
+	}
+
+	public String syntaxHandleAlert() {
+
+		 String syntaxHandleAlert = handleAlert();
+		 return syntaxHandleAlert;
+	}
+	
+	public String expectedResult(String sheetName, Integer RowNumber) {
+
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
+		return expectedErrorResult;
+
+
+	}
+   
+	
 }
 
