@@ -54,20 +54,25 @@ public class RegistrationPF extends BaseClass {
 		return ExcelSheetReader.expectedUrl(66);
 	}
     
-    public void userNameFld() {
-    	UserNameFld.sendKeys("usrName");
+    public void userNameFld(String SheetName, Integer RowNumber) {
+    	UserNameFld.sendKeys("username");
 	}
     
-    public void pssWordFld() {
-    	PssWordFld.sendKeys("pssword");
+    public void pssWordFld(String SheetName, Integer RowNumber) {
+    	PssWordFld.sendKeys("password");
     }	
-    public void ConpssWordFld() {
-    	ConPssWordFld.sendKeys("pwdConfirmation");
+    public void ConpssWordFld(String SheetName, Integer RowNumber) {
+    	ConPssWordFld.sendKeys("passwordConfirm");
     }
+
+	public String expectedMessage(String SheetName, Integer RowNumber) {
+		String expectedMessage = ExcelSheetReader.getExcelSheetData(SheetName, RowNumber, "expectedmessage");
+		return expectedMessage;
+	}
     
-    public void ActualMessage() {
-    	actualMessage.getText();
-    }
-    
+	public String ActualMessage() {
+		String Message = actualMessage.getText();
+		return Message;
    
 	}
+}
