@@ -143,20 +143,6 @@ public class QueuePF extends BaseClass {
 
 	}
 
-//	public String expectedNameErrorResult() {
-//
-//		String  expectedNameErrorResult=ExcelSheetReader.pythonCodeData(2);
-//		return expectedNameErrorResult;
-//
-//	}
-//
-//	public String expectedSyntaxErrorResult() {
-//
-//		 String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3);
-//		 return expectedSyntaxErrorResult ;
-//
-//	}
-
 	public String expectedResult(String sheetName, Integer RowNumber) {
 
 		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
