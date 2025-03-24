@@ -23,28 +23,44 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag4
-   Scenario: Verify that user clicks run button without entering code for Introduction page
+   Scenario Outline: Verify that user clicks run button without entering code for Introduction page
     Given The user is in the tryEditor page for Introduction page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
 @tag5
-   Scenario: Verify that user receives error for invalid python code(name error) for Introduction page
+   Scenario Outline: Verify that user receives error for invalid python code(name error) for Introduction page
     Given The user is in the tryEditor page for Introduction page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
-
+     When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
+      
 @tag6
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Introduction page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Introduction page
     Given The user is in the tryEditor page for Introduction page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
   
   @tag7  
-    Scenario: Verify that user is able to see output for valid python code for Creating Linked List page
+    Scenario Outline: Verify that user is able to see output for valid python code for Creating Linked List page
     Given The user is in the tryEditor page for Introduction page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+   When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
 @tag8
   Scenario: Verify that user is able to navigate to Creating Linked List page
@@ -59,28 +75,44 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag10
-    Scenario: Verify that user clicks run button without entering code for Creating Linked List page
+    Scenario Outline: Verify that user clicks run button without entering code for Creating Linked List page
     Given The user is in the tryEditor page for Creating Linked List page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
 @tag11
-   Scenario: Verify that user receives error for invalid python code(name error) for Creating Linked List page
+   Scenario Outline: Verify that user receives error for invalid python code(name error) for Creating Linked List page
     Given The user is in the tryEditor page for Creating Linked List page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
 @tag12
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Creating Linked List page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Creating Linked List page
     Given The user is in the tryEditor page for Creating Linked List page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
 
 @tag13
-  Scenario: Verify that user is able to see output for valid python code for Creating Linked List page
+ Scenario Outline: Verify that user is able to see output for valid python code for Creating Linked List page
     Given The user is in the tryEditor page for Creating Linked List page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
 @tag14
   Scenario: Verify that user is able to navigate to Types of Linked List page
@@ -95,28 +127,45 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag16
-   Scenario: Verify that user clicks run button without entering code for Types of Linked List page
+  Scenario Outline: Verify that user clicks run button without entering code for Types of Linked List page
     Given The user is in the tryEditor page for Types of Linked List page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
 @tag17
-   Scenario: Verify that user receives error for invalid python code(name error) for Types of Linked List page
+   Scenario Outline: Verify that user receives error for invalid python code(name error) for Types of Linked List page
     Given The user is in the tryEditor page for Types of Linked List page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
+     When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
 @tag18
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Types of Linked List page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Types of Linked List page
     Given The user is in the tryEditor page for Types of Linked List page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
 
 @tag19
-  Scenario: Verify that user is able to see output for valid python code for Creating Linked List page
+  Scenario Outline: Verify that user is able to see output for valid python code for Creating Linked List page
     Given The user is in the tryEditor page for Creating Linked List page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+   When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
+
 
 @tag20 
   Scenario: Verify that user is able to navigate to Implement Linked List in Python page
@@ -131,28 +180,45 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag22
-  Scenario: Verify that user clicks run button without entering code for Implement Linked List in Python page
+  Scenario Outline: Verify that user clicks run button without entering code for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked List in Python page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
+
 
 @tag23
-   Scenario: Verify that user receives error for invalid python code(name error) for Implement Linked List in Python page
+   Scenario Outline: Verify that user receives error for invalid python code(name error) for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked List in Python page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
 @tag24
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Implement Linked List in Python page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked List in Python page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+     When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
 
 @tag25
-  Scenario: Verify that user is able to see output for valid python code for Implement Linked List in Python page
+  Scenario Outline: Verify that user is able to see output for valid python code for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked List in Python page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
      
 @tag26
   Scenario: Verify that user is able to navigate to Traversal page
@@ -167,28 +233,43 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag28
-  Scenario: Verify that user clicks run button without entering code for Traversal page
+  Scenario Outline: Verify that user clicks run button without entering code for Traversal page
     Given The user is in the tryEditor page for Traversal page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
-
+   Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 @tag29
-   Scenario: Verify that user receives error for invalid python code(name error) for Traversal page
+  Scenario Outline: Verify that user receives error for invalid python code(name error) for Traversal page
     Given The user is in the tryEditor page for Traversal page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
+   When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
 @tag30
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Traversal page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Traversal page
     Given The user is in the tryEditor page for Traversal page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+   When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
 
 @tag31
-  Scenario: Verify that user is able to see output for valid python code for Traversal page
+  Scenario Outline: Verify that user is able to see output for valid python code for Traversal page
     Given The user is in the tryEditor page for Traversal page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+     When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
 @tag32
   Scenario: Verify that user is able to navigate to Insertion page
@@ -203,28 +284,45 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag34
- Scenario: Verify that user clicks run button without entering code for Insertion page
+ Scenario Outline: Verify that user clicks run button without entering code for Insertion page
     Given The user is in the tryEditor page for Insertion page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
-
+   Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
+      
 @tag35
-   Scenario: Verify that user receives error for invalid python code(name error) for Insertion page
+   Scenario Outline: Verify that user receives error for invalid python code(name error) for Insertion page
     Given The user is in the tryEditor page for Insertion page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
 @tag36
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Insertion page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Insertion page
     Given The user is in the tryEditor page for Insertion page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
+
 
 @tag37
-  Scenario: Verify that user is able to see output for valid python code for Insertion page
+  Scenario Outline: Verify that user is able to see output for valid python code for Insertion page
     Given The user is in the tryEditor page for Insertion page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+     When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
 @tag38
   Scenario: Verify that user is able to navigate to Deletion page
@@ -239,28 +337,44 @@ Feature: Linked List feature
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
 @tag40
- Scenario: Verify that user clicks run button without entering code for Deletion page
+ Scenario Outline: Verify that user clicks run button without entering code for Deletion page
     Given The user is in the tryEditor page for Deletion page
     When  The user clicks the Run button without entering the code in the Editor for list
-    Then  The user should able to see an error message in alert window
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+     Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  3        |
 
 @tag41
-   Scenario: Verify that user receives error for invalid python code(name error) for Deletion page
+   Scenario Outline: Verify that user receives error for invalid python code(name error) for Deletion page
     Given The user is in the tryEditor page for Deletion page
-    When The user write the invalid name code in Editor and click the Run Button 
-    Then The user should able to see a nameerror message in alert window
+    When The user writes the invalid name code in the Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1        |
 
 @tag42
-  Scenario: Verify that user receives error for invalid python code(syntax error) for Deletion page
+  Scenario Outline: Verify that user receives error for invalid python code(syntax error) for Deletion page
     Given The user is in the tryEditor page for Deletion page
-    When The user write the invalid syntax_code in Editor and click the Run Button
-    Then The user should able to see a syntaxerror msg in alert window
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> , then clicks the Run Button for Linked List
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber> for Linked List
+    
+      Examples: 
+      | SheetName  | RowNumber |
+      |pythonCode  |  2        |
 
 @tag43
-  Scenario: Verify that user is able to see output for valid python code for Insertion page
+  Scenario Outline: Verify that user is able to see output for valid python code for Insertion page
     Given The user is in the tryEditor page for Deletion page
-    When The user write the validcode in Editor and click the Run Button
-    Then The user should able to see out_put in the console
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> , then clicks the Run Button for Queue
+    Then The user write the valid code in Editorform "<SheetName>" at row <RowNumber> , then clicks the Run Button  for Linked List
+    
+    Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
 
 @tag44
       Scenario: Verify that user is able to navigate to Practice Questions page

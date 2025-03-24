@@ -99,30 +99,13 @@ public class LinkedListPF extends BaseClass {
 
 	}
 
-	public void nameinput() {
+	public void codeEditorInput(String sheetName, Integer rowNumber) {
 		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webDriverWait.until(ExpectedConditions.visibilityOf(form));
 		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(2));
-
+		editorInput.sendKeys(ExcelSheetReader.getExcelSheetData(sheetName, rowNumber,"pCode"));
 	}
-
-	public void syntaxinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(3));
-
-	}
-
-	public void validinput() {
-		WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webDriverWait.until(ExpectedConditions.visibilityOf(form));
-		form.click();
-		editorInput.sendKeys(ExcelSheetReader.pythonCodeData(1));
-
-	}
-
+	
 	public void runBtn() {
 		runBtn.click();
 
@@ -164,26 +147,10 @@ public class LinkedListPF extends BaseClass {
 		return syntaxHandleAlert;
 	}
 
-	public String expectedNameErrorResult() {
+	public String expectedResult(String sheetName, Integer RowNumber) {
 
-		String expectedNameErrorResult = ExcelSheetReader.pythonCodeData(2);
-		return expectedNameErrorResult;
-
+		String  expectedErrorResult=ExcelSheetReader.getExcelSheetData(sheetName, RowNumber, "Result");
+		return expectedErrorResult;
 	}
-
-	public String expectedSyntaxErrorResult() {
-
-		String expectedSyntaxErrorResult = ExcelSheetReader.pythonCodeData(3);
-		return expectedSyntaxErrorResult;
-	}
-
-	public String expectedErrorResult() {
-
-		String expectederrorResult = ExcelSheetReader.pythonCodeData(4);
-		return expectederrorResult;
-
-	}
-
-	
 
 }
