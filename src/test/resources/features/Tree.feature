@@ -1,8 +1,8 @@
-#@TS
-#Feature: Tree feature
-#
-  #Background: 
-    #Given The user sign in to dsAlgo Portal
+@TS
+Feature: Tree feature
+
+  Background: 
+    Given The user sign in to dsAlgo Portal
 #
   #@tag1
    #Scenario: Verify that user is able to navigate to Tree page
