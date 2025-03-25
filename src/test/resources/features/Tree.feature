@@ -101,42 +101,42 @@ Feature: Tree feature
     Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber>  overview of tree
     
      Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |  2        |
- #
-  #@tag13ValidCodeExecution
-  #Scenario Outline: Verify that user is able to see the output for valid Python code
-    #Given the user should on "Try Editor" page from the "Terminologies" page
-     #When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> then clicks theRun Button for OverviewofTree 
-     #Then The user should able to see output in the console based on "<SheetName>" at row <RowNumber> for OverviewofTree
-    #
-     #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |    0      |
-#
-  #@tag14TreeNavigation..No
-  #Scenario: Verify that the user is able to navigate to the "Types of Trees" page
-    #Given The user is in the Tree page after sign in
-    #When The user clicks the Types of Trees button
-    #Then The user should be landing on  the Types of Trees page
-#
-  #@tag15TryHereNavigation
-  #Scenario: Verify that the user is able to navigate to the "Try Here" page from the "Types of Trees" page
-    #Given The user is on the Types of Trees page
-    #When The user clicks the Try Here button on the "Types of Trees" page
-    #Then The user should be landing on Try Editor Page 
-#
-#
- #@tag16EmptyCodeExecution
-  #Scenario Outline: Verify that the user receives an error when clicking the Run button without entering code
-    #Given The user should be  redirected on Try Editor Page
-     #When The user clicks the Run button without entering any code for Types of Tree page
-    #Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Types of Tree Page 
-#
- #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |  3        |
-      #
+      | SheetName  | RowNumber | 
+      |pythonCode  |  2        |
+ 
+  @tag13ValidCodeExecution
+  Scenario Outline: Verify that user is able to see the output for valid Python code
+    Given the user should on "Try Editor" page from the "Terminologies" page
+     When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> then clicks theRun Button for OverviewofTree 
+     Then The user should able to see output in the console based on "<SheetName>" at row <RowNumber> for OverviewofTree
+    
+     Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
+
+  @tag14TreeNavigation..No
+  Scenario: Verify that the user is able to navigate to the "Types of Trees" page
+    Given The user is in the Tree page after sign in
+    When The user clicks the Types of Trees button
+    Then The user should be landing on  the Types of Trees page
+
+  @tag15TryHereNavigation
+  Scenario: Verify that the user is able to navigate to the "Try Here" page from the "Types of Trees" page
+    Given The user is on the Types of Trees page
+    When The user clicks the Try Here button on the "Types of Trees" page
+    Then The user should be landing on Try Editor Page 
+
+
+ @tag16EmptyCodeExecution
+  Scenario Outline: Verify that the user receives an error when clicking the Run button without entering code
+    Given The user should be  redirected on Try Editor Page
+     When The user clicks the Run button without entering any code for Types of Tree page
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Types of Tree Page 
+
+ Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  3        |
+      
 #@tag17InvalidCodeExecution
   #Scenario Outline: Verify that the user receives a Error when executing invalid Python code
     #Given The user should be  redirected on Try Editor Page
