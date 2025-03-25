@@ -137,43 +137,40 @@ Feature: Tree feature
       | SheetName  | RowNumber | 
       |pythonCode  |  3        |
       
-#@tag17InvalidCodeExecution
-  #Scenario Outline: Verify that the user receives a Error when executing invalid Python code
-    #Given The user should be  redirected on Try Editor Page
-    #When the user writes the invalid namecode in the Editor from "<SheetName>" at row <RowNumber> then clicks at Run button  for over view of tree
-    #Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Types of Tree Page
-#
- #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |  1       |
-      #
-      #
-#@tag18SyntaxErrorExecution
-  #Scenario Outline: Verify that user receives a SyntaxError for invalid Python code
-    #Given The user should be  redirected on Try Editor Page
-    #When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> then clicks the Run button  Types of Tree Page
-    #Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber>  Types of Tree
-    #
-     #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |  2        |
-      #
-      #
-#@tag19ValidCodeExecution
-  #Scenario Outline: Verify that user is able to see the output for valid Python code
-    #Given The user should be  redirected on Try Editor Page
-    #When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> then clicks theRun Button for "OverviewofTree" Page
-    #Then The user should able to see output in the console based on "<SheetName>" at row <RowNumber> for OverviewofTree
-    #
-     #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |    0      |
-      #
-      #
-      #
-#@tag20TryHereNavigation
-  #Scenario: Verify that the user is able to navigate to the "Try Here" page from the "Tree Traversals" page
-    #Given The user is on the Tree Traversals page
-    #When The user clicks the Try Here button on the Tree Traversals page
-    #Then The user should be redirected to a page with a Try Editor
-#
+@tag17InvalidCodeExecution
+  Scenario Outline: Verify that the user receives a Error when executing invalid Python code
+    Given The user should be  redirected on Try Editor Page
+    When the user writes the invalid namecode in the Editor from "<SheetName>" at row <RowNumber> then clicks at Run button  for over view of tree
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for Types of Tree Page
+
+ Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1       |
+      
+      
+@tag18SyntaxErrorExecution
+  Scenario Outline: Verify that user receives a SyntaxError for invalid Python code
+    Given The user should be  redirected on Try Editor Page
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> then clicks the Run button  Types of Tree Page
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber>  Types of Tree
+    
+     Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  2        |
+          
+@tag19ValidCodeExecution
+  Scenario Outline: Verify that user is able to see the output for valid Python code
+    Given The user should be  redirected on Try Editor Page
+    When The user write the valid code in Editorfrom "<SheetName>" at row <RowNumber> then clicks theRun Button for "OverviewofTree" Page
+    Then The user should able to see output in the console based on "<SheetName>" at row <RowNumber> for OverviewofTree
+    
+     Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |    0      |
+    
+@tag20TryHereNavigation
+  Scenario: Verify that the user is able to navigate to the "Try Here" page from the "Tree Traversals" page
+    Given The user is on the Tree Traversals page
+    When The user clicks the Try Here button on the Tree Traversals page
+    Then The user should be redirected to a page with a Try Editor
+
