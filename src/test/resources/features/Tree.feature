@@ -68,39 +68,39 @@ Feature: Tree feature
     When The user clicks the "Terminologies" button on the Tree page
     Then The user should be redirected to the "Terminologies" page
 
-  #@tag9TryHereNavigationONTerminologoiesPage
-  #Scenario: Verify that the user can navigate to the "Try Here" page from the Terminologies page
-    #Given The user is on the Terminologies page
-    #When The user clicks the "Try Here" button on the "Terminologies" page
-    #Then The user should be redirected to a page with a Try Editor
-#
-  #@tag10EmptyCodeExecution
-  #Scenario Outline: Verify that the user receives an error when clicking the Run button without entering code
-    #Given The user is on the "Try Editor" page from the "Terminologies" page
-     #When The user clicks the Run button without entering any code for Treminologies page
-    #Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for  over view of tree
-#
- #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |  3        |
-      #
-  #@tag11InvalidCodeExecution
-  #Scenario Outline: Verify that the user receives a Error when executing invalid Python code
-    #Given the user should on "Try Editor" page from the "Terminologies" page
-    #When the user writes the invalid namecode in the Editor from "<SheetName>" at row <RowNumber> then clicks at Run button  for over view of tree
-    #Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for over view of tree
-#
- #Examples: 
-      #| SheetName  | RowNumber | 
-      #|pythonCode  |  1       |
-   #
-  #@tag12SyntaxErrorExecution
-  #Scenario Outline: Verify that the user receives a SyntaxError when executing Python code with syntax errors
-    #Given the user should on "Try Editor" page from the "Terminologies" page
-    #When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> then clicks the Run button  overview of tree
-    #Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber>  overview of tree
-    #
-     #Examples: 
+  @tag9TryHereNavigationONTerminologoiesPage
+  Scenario: Verify that the user can navigate to the "Try Here" page from the Terminologies page
+    Given The user is on the Terminologies page
+    When The user clicks the "Try Here" button on the "Terminologies" page
+    Then The user should be redirected to a page with a Try Editor
+
+  @tag10EmptyCodeExecution
+  Scenario Outline: Verify that the user receives an error when clicking the Run button without entering code
+    Given The user is on the "Try Editor" page from the "Terminologies" page
+     When The user clicks the Run button without entering any code for Treminologies page
+    Then The user should able to see  an error message in alert window based on "<SheetName>" at row <RowNumber> for  over view of tree
+
+ Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  3        |
+      
+  @tag11InvalidCodeExecution
+  Scenario Outline: Verify that the user receives a Error when executing invalid Python code
+    Given the user should on "Try Editor" page from the "Terminologies" page
+    When the user writes the invalid namecode in the Editor from "<SheetName>" at row <RowNumber> then clicks at Run button  for over view of tree
+    Then The user should see a NameError message in the alert window based on "<SheetName>" at row <RowNumber> for over view of tree
+
+ Examples: 
+      | SheetName  | RowNumber | 
+      |pythonCode  |  1       |
+   
+  @tag12SyntaxErrorExecution
+  Scenario Outline: Verify that the user receives a SyntaxError when executing Python code with syntax errors
+    Given the user should on "Try Editor" page from the "Terminologies" page
+    When The user write the invalid syntaxcode in Editor from "<SheetName>" at row <RowNumber> then clicks the Run button  overview of tree
+    Then The user should able to see an syntax error message in alert window based on "<SheetName>" at row <RowNumber>  overview of tree
+    
+     Examples: 
       #| SheetName  | RowNumber | 
       #|pythonCode  |  2        |
  #
