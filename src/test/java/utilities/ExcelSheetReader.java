@@ -15,12 +15,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelSheetReader {
 
-	public static void main(String[] args) {
-
-		System.out.println(
-				getData("./src/test/resources/testData/excelData.xlsx").get("expectedUrl"));
-	}
-
 	// creates new instance of the HashMap class and given to the variable
 	// Map is a data structure that stores key-value pairs.
 	private static Map<String, List<Map<String, String>>> excelData = new HashMap<>();
