@@ -49,11 +49,6 @@ public class ConfigReader {
 
 	}
 
-	public static String getBrowser() {
-
-		return getPropertyData().getProperty("browser");
-
-	}
 
 	public static String getExcelFilePath() {
 

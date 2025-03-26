@@ -42,10 +42,10 @@ public class ArrayPF extends BaseClass {
 	@FindBy(xpath = "//button[@type='button']")
 	WebElement runButton;
 
-	@FindBy(xpath = "//a[@href='/array/practice']")
+	@FindBy(xpath = "//a[text()='Practice Questions']")
 	WebElement practiceQuestionsButton;
 
-	@FindBy(xpath = "//a[contains(@href, '/question/1')]")
+	@FindBy(xpath = "//a[text()='Search the array']")
 	WebElement searchArrayLink;
 
 	@FindBy(xpath = "//textarea[@id='editor']")
@@ -71,24 +71,32 @@ public class ArrayPF extends BaseClass {
 
 
 //	 Methods for interacting with elements on the page
-	public void clickRunBtn() {
 
+	
+	public void clickRunButton() {
 		runButton.click();
 	}
+	
+	
+	
 	
     public String handleAlert1() {
 
 		return handleAlert();
 	}
 
+
 	public String nameHandleAlert() {
 
-		return handleAlert();
+		 String nameHandleAlert = handleAlert();
+		 return nameHandleAlert;
+
 	}
 
 	public String syntaxHandleAlert() {
 
-		return handleAlert();
+		 String syntaxHandleAlert = handleAlert();
+		 return syntaxHandleAlert;
 	}
 
     public void clickGetStartedArrayButton() {
@@ -115,9 +123,6 @@ public class ArrayPF extends BaseClass {
 		tryHereButton.click();
 	}
 
-	public void clickRunButton() {
-		runButton.click();
-	}
 
 	public void clickPracticeQuestionsButton() {
 		practiceQuestionsButton.click();
