@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Parallel and CrossBrowserSuite" thread-count="3">
+<suite name="Parallel and CrossBrowserSuite" parallel="tests" thread-count="3">
   <test name="TestChrome">
 
 		<parameter name="browser" value="chrome" />
